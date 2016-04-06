@@ -16,11 +16,6 @@ public class CestodeLembas
     
     public boolean podeDividirEmPares()
     {
-        int aux = qtdeLembas % 2;
-        if(aux > 0 || qtdeLembas == 2){
-            return false;
-        }else{
-            return true;
-        }
+        return (qtdeLembas % 2 == 0 && qtdeLembas != 2);
     }
 }
