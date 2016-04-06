@@ -31,4 +31,8 @@ public class Dwarf
     public String getNome() {
         return Dwarf_nome;
     }
+    
+    public int getVida() {
+        return vida;
+    }
 }
