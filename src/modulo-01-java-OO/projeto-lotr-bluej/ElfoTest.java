@@ -6,6 +6,13 @@ import org.junit.Test;
 public class ElfoTest
 {
     @Test
+    public void verificaConstrFlechas(){
+        int numFlech = 100;
+        Elfo e1 = new Elfo("e1",numFlech);
+        assertEquals(numFlech, e1.getFlechas());
+    }
+    
+    @Test
     public void atiraFlecha()
     {
         Elfo e1 = new Elfo("e1");
