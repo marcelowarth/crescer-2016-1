@@ -16,4 +16,12 @@ public class Elfo {
         experiencia++;
         flechas--;
     }
+    
+    public int getExp() {
+        return experiencia;
+    }
+    
+    public int getFlechas() {
+        return flechas;
+    }
 }
