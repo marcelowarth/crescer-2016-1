@@ -30,4 +30,13 @@ public class ElfoTest
                             && vidaDwarfInic > d1.getVida());
         assertEquals(true, result);
     }
+    
+    @Test
+    public void VerificaString()
+    {
+        Elfo e1 = new Elfo("e1");
+        String stringInic = e1.toString();
+        e1.atirarFlecha();
+        assertEquals(stringInic, e1.toString());
+    }
 }

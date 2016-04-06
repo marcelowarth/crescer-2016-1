@@ -1,6 +1,7 @@
 public class Elfo {
     private String nome;
     private int experiencia, flechas = 42;
+    private String toString;
     
     public Elfo(String nome) {
         this.nome = nome;
@@ -23,5 +24,10 @@ public class Elfo {
     
     public int getFlechas() {
         return flechas;
+    }
+    
+    public String toString() {
+        toString = nome + " possui " + flechas + " e " + experiencia + " níveis de experiência.";
+        return toString;
     }
 }
