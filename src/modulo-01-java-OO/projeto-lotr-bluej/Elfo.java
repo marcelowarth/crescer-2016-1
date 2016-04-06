@@ -10,4 +10,9 @@ public class Elfo {
         experiencia++;
         flechas--;
     }
+    
+    public void atirarFlechaDwarves() {
+        experiencia++;
+        flechas--;
+    }
 }
