@@ -13,7 +13,7 @@ public class Dwarve
     /**
      * Constructor for objects of class Dwarve
      */
-    public Dwarve(String nome)
+    public Dwarve()
     {
     }
 
