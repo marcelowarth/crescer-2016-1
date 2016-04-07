@@ -20,4 +20,33 @@ public class DwarfTest
         d1.recebeDano();
         assertEquals(true, VidaInic > d1.getVida());
     }
+    
+    @Test
+    public void nasceVivo() {
+        Dwarf d1 = new Dwarf("d1");
+        assertEquals(Status.VIVO, d1.getStatus());
+    }
+    
+    @Test
+    public void mataDwarf() {
+        Dwarf d1 = new Dwarf("d1");
+        int i = 0;
+        while (i<11) {
+            d1.recebeDano();
+            i++;
+        }
+        assertEquals(Status.MORTO, d1.getStatus());
+    }
+    
+    @Test
+    public void vidaMenorZero() {
+        Dwarf d1 = new Dwarf("d1");
+        int i = 0;
+        while (i<12) {
+            d1.recebeDano();
+            i++;
+        }
+        boolean aux = d1.getVida() < 0;
+        assertFalse(aux);
+    }
 }

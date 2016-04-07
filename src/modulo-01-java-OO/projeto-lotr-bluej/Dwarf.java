@@ -10,6 +10,7 @@ public class Dwarf
     // instance variables - replace the example below with your own
     private String Dwarf_nome;
     private int vida = 110;
+    private Status status = Status.VIVO;
 
     /**
      * Constructor for objects of class Dwarve
@@ -21,7 +22,12 @@ public class Dwarf
 
     public void recebeDano()
     {
-        vida -= 10;
+        if (vida != 0) {
+            vida -= 10;
+            if(vida <= 0) {
+                morreu();
+            }
+        }
     }
     
     public void setNome(String nome){
@@ -34,5 +40,13 @@ public class Dwarf
     
     public int getVida() {
         return vida;
+    }
+    
+    public Status getStatus() {
+        return status;
+    }
+    
+    private void morreu() {
+        this.status = Status.MORTO;
     }
 }
