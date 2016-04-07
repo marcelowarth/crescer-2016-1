@@ -32,7 +32,7 @@ public class Elfo {
     }
     
     public String toString() {
-        toString = nome + " possui " + flechas + " e " + experiencia + " níveis de experiência.";
+        toString = nome + " possui " + flechas + "flechas e " + experiencia + " níveis de experiência.";
         return toString;
     }
 }
