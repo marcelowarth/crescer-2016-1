@@ -22,7 +22,7 @@ public class Dwarf
 
     public void recebeDano()
     {
-        if (vida != 0) {
+        if (this.status != Status.MORTO) {
             vida -= 10;
             if(vida <= 0) {
                 morreu();
