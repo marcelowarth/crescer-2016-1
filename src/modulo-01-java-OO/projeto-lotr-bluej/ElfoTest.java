@@ -2,6 +2,7 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import java.lang.Object;
 
 public class ElfoTest
 {
@@ -44,6 +45,10 @@ public class ElfoTest
         Elfo e1 = new Elfo("e1");
         String stringInic = e1.toString();
         e1.atirarFlecha();
-        assertEquals(stringInic, e1.toString());
+        
+        boolean result = stringInic.equals(e1.toString());
+        assertEquals(false, result);
+        
+        //assertEquals(stringInic, e1.toString());
     }
 }
