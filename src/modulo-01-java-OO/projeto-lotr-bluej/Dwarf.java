@@ -8,7 +8,7 @@
 public class Dwarf
 {
     // instance variables - replace the example below with your own
-    private String Dwarf_nome;
+    private String nome;
     private int vida = 110, experiencia;
     private Status status = Status.VIVO;
     private Inventario inventario = new Inventario();
@@ -19,23 +19,23 @@ public class Dwarf
      */
     public Dwarf(String nome)
     {
-        Dwarf_nome = nome;
+        this.nome = nome;
         this.dataNascimento = new DataTerceiraEra(1,1,1);
     }
 
     public Dwarf(String nome, DataTerceiraEra dataNascimento)
     {
-        Dwarf_nome = nome;
+        this.nome = nome;
         this.dataNascimento = dataNascimento;
     }
     
     public void recebeDano()
     {
-        double aux = getNumeroSorte();
+        double numeroSorte = getNumeroSorte();
         if (this.status != Status.MORTO) {
-            if (aux < 0) {
+            if (numeroSorte < 0) {
                 experiencia += 2;
-            } else if (aux > 100) {
+            } else if (numeroSorte > 100) {
                 vida -= 10;
                 if(vida <= 0) {
                     vida = 0;
@@ -56,15 +56,11 @@ public class Dwarf
     }
     
     public void setNome(String nome){
-        Dwarf_nome = nome;
-    }
-    
-    public void setVida(){
-        vida = 90;
+        this.nome = nome;
     }
     
     public String getNome() {
-        return Dwarf_nome;
+        return nome;
     }
     
     public int getVida() {
@@ -103,7 +99,7 @@ public class Dwarf
         double result = 101.0;
         if (dataNascimento.ehBissexto() && vida >= 80 && vida <= 90) {
             result *= -33;
-        } else if (Dwarf_nome == "Seixas" || Dwarf_nome == "Meireles") {
+        } else if (nome == "Seixas" || nome == "Meireles") {
             result = (result * 33) % 100;
         }
         return result;
