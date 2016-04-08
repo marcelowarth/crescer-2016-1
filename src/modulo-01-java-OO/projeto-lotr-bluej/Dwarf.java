@@ -31,28 +31,21 @@ public class Dwarf
     
     public void recebeDano()
     {
-        double numeroSorte = getNumeroSorte();
-        if (this.status != Status.MORTO) {
-            if (numeroSorte < 0) {
-                experiencia += 2;
-            } else if (numeroSorte > 100) {
-                vida -= 10;
-                if(vida <= 0) {
-                    vida = 0;
-                    morreu();
-                }
-            } 
-        }
-        
-        /*
-        if (this.status != Status.MORTO) {
-            vida -= 10;
-            if(vida <= 0) {
-                vida = 0;
-                morreu();
+        double numero = this.getNumeroSorte();
+
+        if (numero < 0) {
+            this.experiencia += 2;
+        } else if (numero > 100) {
+
+            int vidaAposFlechada = this.vida - 10;
+            if (vidaAposFlechada == 0) {
+                status = Status.MORTO;
+            }
+
+            if (vida > 0) {
+                vida = vidaAposFlechada;
             }
         }
-        */
     }
     
     public void setNome(String nome){
