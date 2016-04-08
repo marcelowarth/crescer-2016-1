@@ -67,4 +67,22 @@ public class DwarfTest
         assertFalse(d1.contemItem(item));
     }
     
+    @Test
+    public void testaDataNascimento(){
+        DataTerceiraEra data = new DataTerceiraEra(31,10,5000);
+        Dwarf d1 = new Dwarf("d1", data);
+        assertEquals(data, d1.getDataNasc());
+    }
+    
+    @Test
+    public void bissextoEntre8090() {
+        DataTerceiraEra data = new DataTerceiraEra(31,10,2000);
+        Dwarf d1 = new Dwarf("d1", data);
+        d1.setVida();
+        double numeroSorte = d1.getNumeroSorte();
+        double esperado = 101.0*-33;
+        boolean aux = (esperado == numeroSorte);
+        assertTrue(aux);
+    }
+    
 }

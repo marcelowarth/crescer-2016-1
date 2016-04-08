@@ -20,8 +20,15 @@ public class Dwarf
     public Dwarf(String nome)
     {
         Dwarf_nome = nome;
+        this.dataNascimento = new DataTerceiraEra(1,1,1);
     }
 
+    public Dwarf(String nome, DataTerceiraEra dataNascimento)
+    {
+        Dwarf_nome = nome;
+        this.dataNascimento = dataNascimento;
+    }
+    
     public void recebeDano()
     {
         if (this.status != Status.MORTO) {
