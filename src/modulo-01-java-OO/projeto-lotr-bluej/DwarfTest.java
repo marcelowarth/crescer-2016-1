@@ -89,17 +89,15 @@ public class DwarfTest
     @Test
     public void naoBissextoSeixasMeireles() {
         DataTerceiraEra data = new DataTerceiraEra(31,10,2001);
-        //Dwarf d1 = new Dwarf(new String("Seixas"), data);
-        Dwarf d1 = new Dwarf("Seixas", data);
+        
+        Dwarf d1 = new Dwarf(new String("Seixas"), data);
+        //Dwarf d1 = new Dwarf("Seixas", data);
         Dwarf d2 = new Dwarf("Meireles", data);
         double numeroSorte1 = d1.getNumeroSorte();
         double numeroSorte2 = d2.getNumeroSorte();
         double esperado = (101.0*33)%100;
-        assertTrue(esperado == numeroSorte1);
-        assertTrue(esperado == numeroSorte2);
-        
-        //assertEquals(esperado, numeroSorte1);
-        //assertEquals(esperado, numeroSorte2);
+        assertEquals(esperado, numeroSorte1, 0);
+        assertEquals(esperado, numeroSorte2, 0);
     }
     
     @Test
