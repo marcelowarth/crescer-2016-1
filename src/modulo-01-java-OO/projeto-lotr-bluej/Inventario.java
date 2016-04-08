@@ -13,7 +13,7 @@ public class Inventario
         inventario.remove(item);
     }
     
-    public boolean contemItem(Item item) {
-        return inventario.contains(item);
+    public ArrayList<Item> getItens() {
+        return this.inventario;
     }
 }

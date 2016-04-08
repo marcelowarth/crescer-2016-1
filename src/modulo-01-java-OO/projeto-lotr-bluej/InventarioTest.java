@@ -11,7 +11,7 @@ public class InventarioTest
         Inventario inv = new Inventario();
         Item item = new Item("Calca", 100);
         inv.adicionarItem(item);        
-        assertTrue(inv.contemItem(item));
+        assertTrue(inv.getItens().contains(item));
     }
     
     @Test
@@ -20,6 +20,6 @@ public class InventarioTest
         Item item = new Item("Calca", 100);
         inv.adicionarItem(item);
         inv.removeItem(item);
-        assertFalse(inv.contemItem(item));
+        assertFalse(inv.getItens().contains(item));
     }
 }

@@ -81,11 +81,15 @@ public class Dwarf
     }
     
     public boolean contemItem(Item item) {
-        return inventario.contemItem(item);
+        return inventario.getItens().contains(item);
     }
     
     public int getExp() {
         return experiencia;
+    }
+    
+    public Inventario getInventario() {
+        return this.inventario;
     }
     
     public double getNumeroSorte() {
