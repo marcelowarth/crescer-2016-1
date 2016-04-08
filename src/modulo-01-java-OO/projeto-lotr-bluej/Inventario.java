@@ -12,4 +12,8 @@ public class Inventario
     public void removeItem(Item item) {
         inventario.remove(item);
     }
+    
+    public boolean contemItem(Item item) {
+        return inventario.contains(item);
+    }
 }

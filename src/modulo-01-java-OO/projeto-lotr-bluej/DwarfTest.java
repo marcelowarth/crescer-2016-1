@@ -85,4 +85,35 @@ public class DwarfTest
         assertTrue(aux);
     }
     
+    @Test
+    public void naoBissextoSeixasMeireles() {
+        DataTerceiraEra data = new DataTerceiraEra(31,10,2001);
+        Dwarf d1 = new Dwarf("Seixas", data);
+        Dwarf d2 = new Dwarf("Meireles", data);
+        double numeroSorte1 = d1.getNumeroSorte();
+        double numeroSorte2 = d2.getNumeroSorte();
+        double esperado = (101.0*33)%100;
+        assertTrue(esperado == numeroSorte1);
+        assertTrue(esperado == numeroSorte1);
+    }
+    
+    @Test
+    public void verifica3possibilidadesRecebeDano() {
+        DataTerceiraEra dataB = new DataTerceiraEra(31,10,2000);
+        DataTerceiraEra dataNB = new DataTerceiraEra(31,10,2001);
+        Dwarf d1 = new Dwarf("Seixas", dataNB);
+        Dwarf d2 = new Dwarf("xxx", dataNB);
+        Dwarf d3 = new Dwarf("d1", dataB);
+        d3.setVida();
+        d1.recebeDano();
+        d2.recebeDano();
+        d3.recebeDano();
+        
+        assertEquals(110, d1.getVida());
+        assertEquals(0, d1.getExp());
+        assertEquals(100, d2.getVida());
+        assertEquals(0, d2.getExp());
+        assertEquals(90, d3.getVida());
+        assertEquals(2, d3.getExp());
+    }
 }
