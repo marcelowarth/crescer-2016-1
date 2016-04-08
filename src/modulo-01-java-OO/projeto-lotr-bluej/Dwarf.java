@@ -11,6 +11,8 @@ public class Dwarf
     private String Dwarf_nome;
     private int vida = 110;
     private Status status = Status.VIVO;
+    private Inventario inventario = new Inventario();
+    private DataTerceiraEra dataNascimento;
 
     /**
      * Constructor for objects of class Dwarve
@@ -47,7 +49,24 @@ public class Dwarf
         return status;
     }
     
+    public DataTerceiraEra getDataNasc() {
+        return dataNascimento;
+    }
+    
     private void morreu() {
         this.status = Status.MORTO;
     }
+    
+    public void adicionarItem(Item item) {
+        inventario.adicionarItem(item);
+    }
+    
+    public void perderItem(Item item) {
+        inventario.removeItem(item);
+    }
+    
+    public boolean contemItem(Item item) {
+        return inventario.contemItem(item);
+    }
+    
 }

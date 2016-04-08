@@ -49,4 +49,22 @@ public class DwarfTest
         boolean aux = d1.getVida() < 0;
         assertFalse(aux);
     }
+    
+    @Test
+    public void adicionaItem(){
+        Dwarf d1 = new Dwarf("d1");
+        Item item = new Item("Calca", 100);
+        d1.adicionarItem(item);        
+        assertTrue(d1.contemItem(item));
+    }
+    
+    @Test
+    public void removeItem(){
+        Dwarf d1 = new Dwarf("d1");
+        Item item = new Item("Calca", 100);
+        d1.adicionarItem(item);
+        d1.perderItem(item);
+        assertFalse(d1.contemItem(item));
+    }
+    
 }
