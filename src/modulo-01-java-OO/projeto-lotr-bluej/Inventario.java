@@ -44,4 +44,19 @@ public class Inventario
         }
         return itemMais;
     }
+    
+    public void ordenarItens() {
+        Item itemTroca;
+        int count = 0;
+        while (count < inventario.size()) {
+            for (int i = count + 1; i < inventario.size(); i++) {
+                if (inventario.get(count).getQtde()>inventario.get(i).getQtde()) {
+                    itemTroca = inventario.get(i);
+                    inventario.set(i, inventario.get(count));
+                    inventario.set(count, itemTroca);
+                }
+            }
+            count++;
+        }
+    }
 }

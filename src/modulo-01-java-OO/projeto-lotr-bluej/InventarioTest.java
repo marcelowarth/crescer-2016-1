@@ -59,4 +59,19 @@ public class InventarioTest
         inv.adicionarItem(item3);
         assertEquals(item3, inv.maisPopular());
     }
+    
+    @Test
+    public void ordena() {
+        Inventario inv = new Inventario();
+        Item item = new Item("Adaga", 1000);
+        Item item2 = new Item("Escudo", 10);
+        Item item3 = new Item("Bracelete", 100);
+        inv.adicionarItem(item);
+        inv.adicionarItem(item2);
+        inv.adicionarItem(item3);
+        inv.ordenarItens();
+        assertEquals(item2, inv.getItens().get(0));
+        assertEquals(item3, inv.getItens().get(1));
+        assertEquals(item, inv.getItens().get(2));
+    }
 }
