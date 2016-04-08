@@ -22,7 +22,7 @@ public class Inventario
         for(int i = 0; i<inventario.size(); i++) {
             stringDesc += inventario.get(i).getDesc();
             if(i<inventario.size()-1) {
-                stringDesc += ", ";
+                stringDesc += ",";
             }
         }
         return stringDesc;
@@ -35,5 +35,13 @@ public class Inventario
         }
     }
     
-    
+    public Item maisPopular() {
+        Item itemMais = inventario.get(0);
+        for(int i = 1; i < inventario.size(); i++) {
+            if (itemMais.getQtde()<inventario.get(i).getQtde()) {
+                itemMais = inventario.get(i);
+            }
+        }
+        return itemMais;
+    }
 }

@@ -32,7 +32,31 @@ public class InventarioTest
         inv.adicionarItem(item);
         inv.adicionarItem(item2);
         inv.adicionarItem(item3);
-        String esperado = "Adaga, Escudo, Bracelete";
+        String esperado = "Adaga,Escudo,Bracelete";
         assertEquals(esperado, inv.getDescricoesItens());
+    }
+    
+    @Test
+    public void primeiroMaisPopular() {
+        Inventario inv = new Inventario();
+        Item item = new Item("Adaga", 100);
+        Item item2 = new Item("Escudo", 10);
+        Item item3 = new Item("Bracelete", 1);
+        inv.adicionarItem(item);
+        inv.adicionarItem(item2);
+        inv.adicionarItem(item3);
+        assertEquals(item, inv.maisPopular());
+    }
+    
+    @Test
+    public void ultimoMaisPopular() {
+        Inventario inv = new Inventario();
+        Item item = new Item("Adaga", 1);
+        Item item2 = new Item("Escudo", 10);
+        Item item3 = new Item("Bracelete", 100);
+        inv.adicionarItem(item);
+        inv.adicionarItem(item2);
+        inv.adicionarItem(item3);
+        assertEquals(item3, inv.maisPopular());
     }
 }
