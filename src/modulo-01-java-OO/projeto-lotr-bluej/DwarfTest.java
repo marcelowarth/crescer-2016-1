@@ -149,4 +149,45 @@ public class DwarfTest
         assertEquals(90, d3.getVida());
         assertEquals(2, d3.getExp());
     }
+    
+    @Test
+    public void verificaSorteUmItem() {
+        DataTerceiraEra data = new DataTerceiraEra(31,10,2000);
+        Dwarf d1 = new Dwarf("Lep", data);
+        Item item = new Item("Escudo", 1);
+        d1.adicionarItem(item);
+        d1.recebeDano();
+        d1.recebeDano();
+        d1.tentarSorte();
+        assertEquals(1001, d1.getInventario().getItens().get(0).getQtde());
+    }
+    
+    @Test
+    public void verificaSorte3Itens() {
+        DataTerceiraEra data = new DataTerceiraEra(31,10,2000);
+        Dwarf d1 = new Dwarf("Lep", data);
+        Item item = new Item("Escudo", 1);
+        Item item2 = new Item("Elmo", 5);
+        Item item3 = new Item("Bota", 100);
+        d1.adicionarItem(item);
+        d1.adicionarItem(item2);
+        d1.adicionarItem(item3);
+        d1.recebeDano();
+        d1.recebeDano();
+        d1.tentarSorte();
+        assertEquals(1001, d1.getInventario().getItens().get(0).getQtde());
+        assertEquals(1005, d1.getInventario().getItens().get(1).getQtde());
+        assertEquals(1100, d1.getInventario().getItens().get(2).getQtde());
+    }
+    
+    @Test
+    public void verificaSorteNaoTem() {
+        Dwarf d1 = new Dwarf("Lep");
+        Item item = new Item("Escudo", 1);
+        d1.adicionarItem(item);
+        d1.recebeDano();
+        d1.recebeDano();
+        d1.tentarSorte();
+        assertEquals(1, d1.getInventario().getItens().get(0).getQtde());
+    }
 }

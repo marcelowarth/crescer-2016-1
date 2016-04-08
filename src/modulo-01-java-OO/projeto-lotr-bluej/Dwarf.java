@@ -96,12 +96,20 @@ public class Dwarf
         boolean eSeixas = this.nome.equals("Seixas");
         boolean eMeireles = this.nome.equals("Meireles");
         double result = 101.0;
-        if (dataNascimento.ehBissexto() && vida >= 80 && vida <= 90) {
-            result *= -33;
-        //} else if (nome == "Seixas" || nome == "Meireles") {
-        } else if (eSeixas || eMeireles) {
-            result = (result * 33) % 100;
+        if (this.nome != null) {
+            if (dataNascimento.ehBissexto() && vida >= 80 && vida <= 90) {
+                result *= -33;
+            //} else if (nome == "Seixas" || nome == "Meireles") {
+            } else if (eSeixas || eMeireles) {
+                result = (result * 33) % 100;
+            }
         }
         return result;
+    }
+    
+    public void tentarSorte() {
+        if(getNumeroSorte() == -3333.0) {
+            inventario.temSorte();
+        }
     }
 }

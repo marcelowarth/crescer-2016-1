@@ -22,4 +22,17 @@ public class InventarioTest
         inv.removeItem(item);
         assertFalse(inv.getItens().contains(item));
     }
+    
+    @Test
+    public void descItensArray() {
+        Inventario inv = new Inventario();
+        Item item = new Item("Adaga", 1);
+        Item item2 = new Item("Escudo", 1);
+        Item item3 = new Item("Bracelete", 1);
+        inv.adicionarItem(item);
+        inv.adicionarItem(item2);
+        inv.adicionarItem(item3);
+        String esperado = "Adaga, Escudo, Bracelete";
+        assertEquals(esperado, inv.getDescricoesItens());
+    }
 }

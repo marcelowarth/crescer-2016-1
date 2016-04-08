@@ -17,4 +17,8 @@ public class Item
     public String getDesc() {
         return desc;
     }
+    
+    public void setQtde(int qtde) {
+        this.qtde = qtde;
+    }
 }
