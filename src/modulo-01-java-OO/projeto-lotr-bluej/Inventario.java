@@ -59,4 +59,17 @@ public class Inventario
             count++;
         }
     }
+    
+    public void temSorteIrish(){
+        for(int i = 0; i<inventario.size(); i++) {
+            int atual = inventario.get(i).getQtde();
+            int countRegressivo = atual;
+            int countTotal = 0;
+            while (countRegressivo > 0) {
+                countTotal += countRegressivo;
+                countRegressivo--;
+            }
+            inventario.get(i).setQtde((countTotal*1000)+atual);
+        }
+    }
 }
