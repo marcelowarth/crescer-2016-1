@@ -2,9 +2,6 @@ import java.util.*;
 
 public class HobbitContador
 {
-    public HobbitContador () {
-    }
-    
     public int calcularDiferenca(ArrayList<ArrayList<Integer>> array) {
         int produtos = 0, mmc = 0, vl1, vl2;
         
@@ -13,16 +10,11 @@ public class HobbitContador
             vl2 = array.get(i).get(1);
             produtos += (vl1*vl2);
             
-            switch ((vl1>=vl2) ? 1 : 2) {
-                case 1:
-                    mmc += calculaMMC(vl1, vl2);
-                    break;
-                case 2:
-                    mmc += calculaMMC(vl2, vl1);
-                    break;
-            }
+            if(vl1>=vl2)
+                mmc += calculaMMC(vl1, vl2);
+            else
+                mmc += calculaMMC(vl2, vl1);
         }
-        
         return produtos - mmc;
     }
     

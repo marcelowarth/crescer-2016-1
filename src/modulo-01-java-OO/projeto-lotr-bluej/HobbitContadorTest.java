@@ -23,4 +23,32 @@ public class HobbitContadorTest
         array.add(new ArrayList<>(Arrays.asList(60,12)));
         assertEquals(840, hobbit.calcularDiferenca(array));
     }
+    
+    @Test
+    public void calcularDiferencaComZeroEUm() {
+        ArrayList<ArrayList<Integer>> arrayDePares = new ArrayList<>();
+        arrayDePares.add(new ArrayList<>(Arrays.asList(13, 91)));
+        arrayDePares.add(new ArrayList<>(Arrays.asList(0, 0)));
+        arrayDePares.add(new ArrayList<>(Arrays.asList(1, 1)));
+
+        HobbitContador contador = new HobbitContador();
+        assertEquals(1092, contador.calcularDiferenca(arrayDePares));
+    }
+    
+    @Test
+    public void calcularDiferencaArrayVazio() {
+        ArrayList<ArrayList<Integer>> arrayDePares = new ArrayList<>();
+        HobbitContador contador = new HobbitContador();
+        assertEquals(0, contador.calcularDiferenca(arrayDePares));
+    }
+    
+    @Test
+    public void calcularDiferencaArrayComZeros() {
+        ArrayList<ArrayList<Integer>> arrayDePares = new ArrayList<>();
+        arrayDePares.add(new ArrayList<>(Arrays.asList(0, 0)));
+        arrayDePares.add(new ArrayList<>(Arrays.asList(0, 0)));
+        arrayDePares.add(new ArrayList<>(Arrays.asList(0, 0)));
+        HobbitContador contador = new HobbitContador();
+        assertEquals(0, contador.calcularDiferenca(arrayDePares));
+    }
 }
