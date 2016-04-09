@@ -51,4 +51,12 @@ public class HobbitContadorTest
         HobbitContador contador = new HobbitContador();
         assertEquals(0, contador.calcularDiferenca(arrayDePares));
     }
+    
+    @Test
+    public void calcularDiferencaArrayUmValorZero() {
+        ArrayList<ArrayList<Integer>> arrayDePares = new ArrayList<>();
+        arrayDePares.add(new ArrayList<>(Arrays.asList(0, 1)));
+        HobbitContador contador = new HobbitContador();
+        assertEquals(0, contador.calcularDiferenca(arrayDePares));
+    }
 }

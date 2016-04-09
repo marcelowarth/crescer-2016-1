@@ -19,10 +19,14 @@ public class HobbitContador
     }
     
     private int calculaMMC(int vl1, int vl2) {
-        boolean aindaMaior = true, igual = false;
+        boolean aindaMaior = true;
         int auxVl1 = vl1, auxVl2 = vl2;
+        int retorno = 0;
         if(vl1 == vl2) {
-            igual = true;
+            aindaMaior = false;
+            retorno = auxVl2;
+        }
+        if(vl1 == 0 || vl2 == 0) {
             aindaMaior = false;
         }
         while(aindaMaior) {
@@ -31,9 +35,9 @@ public class HobbitContador
                 auxVl1 += vl1;
             } else if (auxVl2 == auxVl1) {
                 aindaMaior = false;
-                igual = true;
+                retorno = auxVl2;
             }
         }
-        return auxVl2;
+        return retorno;
     }
 }
