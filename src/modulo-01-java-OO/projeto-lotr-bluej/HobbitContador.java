@@ -40,4 +40,28 @@ public class HobbitContador
         }
         return retorno;
     }
+    
+    public int obterMaiorMultiploDeTresAte(int numero) {
+        int multiplos = 0; //ArrayList não necessário pois possui somente 1 valor
+    
+        for (int i = 1; i <= numero; i++) { //nao existia variavel limite
+            if (i % 3 == 0) {
+                multiplos = i; //continue nao necessario
+            }
+        }
+    
+        return multiplos; // deve retornar somente o ultimo multiplo
+    }
+    
+    public ArrayList<Integer> obterMultiplosDeTresAte(int numero) {
+        ArrayList<Integer> multiplos = new ArrayList<>(); //Arrays.asList(0) não necessário pois possui somente 1 valor
+    
+        for (int i = 1; i <= numero; i++) { //nao existia variavel limite
+            if (i % 3 == 0) { //break nao necessario
+                multiplos.add(i); //continue nao necessario
+            }
+        }
+        
+        return multiplos;
+    }
 }
