@@ -1,5 +1,6 @@
 public class Elfo extends Personagem{
-    private int flechas = 42;
+    protected int flechas = 42;
+    private int ganhaExp = 1;
     private String toString;
     
     public Elfo(String nome) {
@@ -14,18 +15,22 @@ public class Elfo extends Personagem{
     }
     
     public void atirarFlecha() {
-        experiencia++;
+        experiencia += ganhaExp;
         flechas--;
     }
     
     public void atirarFlechaDwarfs(Dwarf dwarf) {
         dwarf.recebeDano();
-        experiencia++;
+        experiencia += ganhaExp;
         flechas--;
     }
     
     public int getFlechas() {
         return flechas;
+    }
+    
+    public int getGanhaExp() {
+        return ganhaExp;
     }
     
     public String toString() {

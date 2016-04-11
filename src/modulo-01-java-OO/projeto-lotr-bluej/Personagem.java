@@ -47,7 +47,7 @@ public class Personagem
         return status;
     }
     
-    private void morreu() {
+    protected void morreu() {
         this.status = Status.MORTO;
     }
 }

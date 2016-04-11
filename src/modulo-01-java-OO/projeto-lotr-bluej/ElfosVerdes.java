@@ -1,5 +1,7 @@
 public class ElfosVerdes extends Elfo
 {
+    protected int ganhaExpEV = (super.getGanhaExp()*2);
+    
     public ElfosVerdes(String nome)
     {
         super(nome);
@@ -11,8 +13,9 @@ public class ElfosVerdes extends Elfo
     }
     
     public void atirarFlechaDwarfs(Dwarf dwarf) {
-        super.atirarFlechaDwarfs(dwarf);
-        super.experiencia++;
+        dwarf.recebeDano();
+        super.flechas--;
+        super.experiencia += ganhaExpEV;
     }
     
     public void adicionarItem(Item item) {

@@ -6,11 +6,21 @@ import org.junit.Test;
 public class ElfosVerdesTest
 {
     @Test
-    public void atiraFlechaDwarf() {
+    public void atiraFlechaDwarf1Vez() {
         ElfosVerdes e1 = new ElfosVerdes("e1");
         Dwarf d1 = new Dwarf("d1");
         e1.atirarFlechaDwarfs(d1);
         assertEquals(2,e1.getExp());
+    }
+    
+    @Test
+    public void atiraFlechaDwarf10Vez() {
+        ElfosVerdes e1 = new ElfosVerdes("e1");
+        Dwarf d1 = new Dwarf("d1");
+        for (int i = 0; i < 10; i++) {
+            e1.atirarFlechaDwarfs(d1);
+        }
+        assertEquals(20,e1.getExp());
     }
     
     @Test
