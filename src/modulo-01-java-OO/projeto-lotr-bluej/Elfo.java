@@ -27,7 +27,7 @@ public class Elfo extends Personagem{
     }
     
     public String toString() {
-        toString = nome + " possui " + flechas + "flechas e " + experiencia + " níveis de experiência.";
+        toString = nome + " possui " + flechas + "flechas e " + super.experiencia + " níveis de experiência.";
         return toString;
     }
 }
