@@ -9,8 +9,6 @@ public class Dwarf extends Personagem
 {
     // instance variables - replace the example below with your own
     private String nome;
-    private int vida = 110;
-    private Status status = Status.VIVO;
     private DataTerceiraEra dataNascimento;
 
     /**
@@ -19,12 +17,14 @@ public class Dwarf extends Personagem
     public Dwarf(String nome)
     {
         super(nome);
+        super.vida = 110;
         this.dataNascimento = new DataTerceiraEra(1,1,1);
     }
 
     public Dwarf(String nome, DataTerceiraEra dataNascimento)
     {
         super(nome);
+        super.vida = 110;
         this.dataNascimento = dataNascimento;
     }
     
@@ -47,24 +47,8 @@ public class Dwarf extends Personagem
         }
     }
     
-    public void setNome(String nome){
-        this.nome = nome;
-    }
-    
-    public int getVida() {
-        return vida;
-    }
-    
-    public Status getStatus() {
-        return status;
-    }
-    
     public DataTerceiraEra getDataNasc() {
         return dataNascimento;
-    }
-    
-    private void morreu() {
-        this.status = Status.MORTO;
     }
     
     public double getNumeroSorte() {

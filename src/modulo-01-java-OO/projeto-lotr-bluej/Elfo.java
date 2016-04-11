@@ -4,10 +4,12 @@ public class Elfo extends Personagem{
     
     public Elfo(String nome) {
         super(nome);
+        super.vida = 100;
     }
     
     public Elfo(String nome, int flechas) {
         super(nome);
+        super.vida = 100;
         this.flechas = flechas;
     }
     
