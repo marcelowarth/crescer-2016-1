@@ -1,14 +1,13 @@
-public class Elfo {
-    private String nome;
-    private int experiencia, flechas = 42;
+public class Elfo extends Personagem{
+    private int flechas = 42;
     private String toString;
     
     public Elfo(String nome) {
-        this.nome = nome;
+        super(nome);
     }
     
     public Elfo(String nome, int flechas) {
-        this.nome = nome;
+        super(nome);
         this.flechas = flechas;
     }
     
@@ -21,10 +20,6 @@ public class Elfo {
         dwarf.recebeDano();
         experiencia++;
         flechas--;
-    }
-    
-    public int getExp() {
-        return experiencia;
     }
     
     public int getFlechas() {

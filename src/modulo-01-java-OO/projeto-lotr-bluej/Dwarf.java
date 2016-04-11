@@ -5,13 +5,12 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Dwarf
+public class Dwarf extends Personagem
 {
     // instance variables - replace the example below with your own
     private String nome;
-    private int vida = 110, experiencia;
+    private int vida = 110;
     private Status status = Status.VIVO;
-    protected Inventario inventario = new Inventario();
     private DataTerceiraEra dataNascimento;
 
     /**
@@ -19,13 +18,13 @@ public class Dwarf
      */
     public Dwarf(String nome)
     {
-        this.nome = nome;
+        super(nome);
         this.dataNascimento = new DataTerceiraEra(1,1,1);
     }
 
     public Dwarf(String nome, DataTerceiraEra dataNascimento)
     {
-        this.nome = nome;
+        super(nome);
         this.dataNascimento = dataNascimento;
     }
     
@@ -52,10 +51,6 @@ public class Dwarf
         this.nome = nome;
     }
     
-    public String getNome() {
-        return nome;
-    }
-    
     public int getVida() {
         return vida;
     }
@@ -72,31 +67,11 @@ public class Dwarf
         this.status = Status.MORTO;
     }
     
-    public void adicionarItem(Item item) {
-        inventario.adicionarItem(item);
-    }
-    
-    public void perderItem(Item item) {
-        inventario.removeItem(item);
-    }
-    
-    public boolean contemItem(Item item) {
-        return inventario.getItens().contains(item);
-    }
-    
-    public int getExp() {
-        return experiencia;
-    }
-    
-    public Inventario getInventario() {
-        return this.inventario;
-    }
-    
     public double getNumeroSorte() {
-        boolean eSeixas = this.nome.equals("Seixas");
-        boolean eMeireles = this.nome.equals("Meireles");
+        boolean eSeixas = super.nome.equals("Seixas");
+        boolean eMeireles = super.nome.equals("Meireles");
         double result = 101.0;
-        if (this.nome != null) {
+        if (super.nome != null) {
             if (dataNascimento.ehBissexto() && vida >= 80 && vida <= 90) {
                 result *= -33;
             //} else if (nome == "Seixas" || nome == "Meireles") {
