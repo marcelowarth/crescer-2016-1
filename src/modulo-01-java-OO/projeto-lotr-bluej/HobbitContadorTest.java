@@ -72,9 +72,9 @@ public class HobbitContadorTest
     @Test
     public void calculaMultiplos3() {
         HobbitContador contador = new HobbitContador();
-        assertEquals(new ArrayList<>(Arrays.asList(3,6,9)), contador.obterMultiplosDeTresAte(10));
-        assertEquals(new ArrayList<>(Arrays.asList(3,6,9,12)), contador.obterMultiplosDeTresAte(12));
-        assertEquals(new ArrayList<>(Arrays.asList(3,6,9,12,15)), contador.obterMultiplosDeTresAte(17));
+        assertEquals(new ArrayList<>(Arrays.asList(0,3,6,9)), contador.obterMultiplosDeTresAte(10));
+        assertEquals(new ArrayList<>(Arrays.asList(0,3,6,9,12)), contador.obterMultiplosDeTresAte(12));
+        assertEquals(new ArrayList<>(Arrays.asList(0,3,6,9,12,15)), contador.obterMultiplosDeTresAte(17));
     }
 }
 
