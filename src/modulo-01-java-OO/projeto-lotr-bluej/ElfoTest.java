@@ -31,7 +31,7 @@ public class ElfoTest
         Dwarf d1 = new Dwarf("d1");
         int numFlInic = e1.getFlechas();
         int numExpInic = e1.getExp();
-        int vidaDwarfInic = d1.getVida();
+        double vidaDwarfInic = d1.getVida();
         e1.atirarFlechaDwarfs(d1);
         boolean result = (numFlInic > e1.getFlechas() 
                             && numExpInic < e1.getExp()

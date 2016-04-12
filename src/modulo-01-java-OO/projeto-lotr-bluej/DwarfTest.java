@@ -16,7 +16,7 @@ public class DwarfTest
     @Test
     public void recebeDano() {
         Dwarf d1 = new Dwarf("d1");
-        int VidaInic = d1.getVida();
+        double VidaInic = d1.getVida();
         d1.recebeDano();
         assertEquals(true, VidaInic > d1.getVida());
     }
@@ -142,11 +142,11 @@ public class DwarfTest
         d3.recebeDano();
         d3.recebeDano();
         
-        assertEquals(110, d1.getVida());
+        assertEquals(110, d1.getVida(), 0);
         assertEquals(0, d1.getExp());
-        assertEquals(100, d2.getVida());
+        assertEquals(100, d2.getVida(), 0);
         assertEquals(0, d2.getExp());
-        assertEquals(90, d3.getVida());
+        assertEquals(90, d3.getVida(), 0);
         assertEquals(2, d3.getExp());
     }
     
