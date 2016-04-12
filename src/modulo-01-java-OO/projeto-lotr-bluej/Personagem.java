@@ -1,4 +1,4 @@
-public class Personagem
+public abstract class Personagem
 {
     protected String nome;
     protected int experiencia = 0;
@@ -6,7 +6,7 @@ public class Personagem
     protected Status status = Status.VIVO;
     protected Inventario inventario = new Inventario();
 
-    public Personagem(String nome)
+    protected Personagem(String nome)
     {
         this.nome = nome;
     }

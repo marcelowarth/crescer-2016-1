@@ -22,4 +22,18 @@ public class ItemTest
         assertEquals(qtde, item.getQtde());
         assertEquals(desc, item.getDesc());
     }
+    
+    @Test
+    public void metodoEqualsTrue() {
+        Item item = new Item("Chapeu", 1);
+        Item item2 = new Item("Chapeu", 1);
+        assertTrue(item.equals(item2));
+    }
+    
+    @Test
+    public void metodoEqualsFalse() {
+        Item item = new Item("Chapeu", 1);
+        Item item2 = new Item("Chapeu", 2);
+        assertFalse(item.equals(item2));
+    }
 }

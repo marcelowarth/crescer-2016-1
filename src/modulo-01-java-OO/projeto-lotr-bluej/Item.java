@@ -21,4 +21,12 @@ public class Item
     public void setQtde(int qtde) {
         this.qtde = qtde;
     }
+    
+    public boolean equals(Object obj) {
+        Item outro = (Item)obj;
+        return this.getQtde() == outro.getQtde() && 
+        this.getDesc() != null && 
+        outro.getDesc() != null && 
+        this.getDesc() == outro.getDesc();
+    }
 }
