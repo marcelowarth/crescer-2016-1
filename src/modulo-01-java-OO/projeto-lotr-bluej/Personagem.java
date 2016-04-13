@@ -23,10 +23,6 @@ public abstract class Personagem
         inventario.removeItem(item);
     }
     
-    public boolean contemItem(Item item) {
-        return inventario.getItens().contains(item);
-    }
-    
     public int getExp() {
         return experiencia;
     }
