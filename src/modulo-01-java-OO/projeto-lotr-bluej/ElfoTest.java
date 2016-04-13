@@ -60,4 +60,15 @@ public class ElfoTest
         Elfo e3 = new ElfoNoturno("e3");
         assertEquals(qteAntes + 3, Elfo.getNumElfos());
     }
+    
+    @Test
+    public void verificaQtdeElfos5() {
+        int qteAntes = Elfo.getNumElfos();
+        Elfo e1 = new Elfo("e1");
+        Elfo e2 = new ElfosVerdes("e2");
+        Elfo e3 = new ElfoNoturno("e3");
+        Elfo e4 = new ElfoNoturno("e4");
+        Elfo e5 = new ElfoNoturno("e5");
+        assertEquals(qteAntes + 5, Elfo.getNumElfos());
+    }
 }
