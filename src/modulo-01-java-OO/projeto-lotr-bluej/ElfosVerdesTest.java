@@ -5,6 +5,11 @@ import org.junit.Test;
 
 public class ElfosVerdesTest
 {
+    @After
+    public void tearDown() {
+        System.gc();
+    }
+    
     @Test
     public void atiraFlechaDwarf1Vez() {
         ElfosVerdes e1 = new ElfosVerdes("e1");

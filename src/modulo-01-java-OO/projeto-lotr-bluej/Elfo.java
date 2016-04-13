@@ -15,6 +15,11 @@ public class Elfo extends Personagem{
         this.flechas = flechas;
     }
     
+    protected void finalize() throws Throwable {
+        contaElfos--;
+        super.finalize();
+    }
+    
     public void atirarFlecha() {
         experiencia += ganhaExp;
         flechas--;

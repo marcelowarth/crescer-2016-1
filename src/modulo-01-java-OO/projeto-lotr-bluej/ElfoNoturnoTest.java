@@ -5,6 +5,11 @@ import org.junit.Test;
 
 public class ElfoNoturnoTest
 {
+    @After
+    public void tearDown() {
+        System.gc();
+    }
+    
     @Test
     public void atirarFlechaElfoNoturnoPerde5Vida()
     {
