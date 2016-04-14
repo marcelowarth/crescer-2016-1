@@ -3,7 +3,7 @@ import java.util.*;
 public class ExercitoDeElfos
 {
     private HashMap<String, Elfo> exercito = new HashMap<>();
-    private HashMap<Status, Elfo> exercitoAgrupado = new HashMap<>();
+    private HashMap<Status, ArrayList<Elfo>> exercitoAgrupado = new HashMap<>();
     
     public void alistaElfo(Elfo elfo) {
         if(elfo instanceof ElfoNoturno || elfo instanceof ElfosVerdes) {
@@ -15,21 +15,15 @@ public class ExercitoDeElfos
         return exercito;
     }
     
-    public void agruparPorStatus() {
-        for(Elfo elfo : exercito.values()) {
-            exercitoAgrupado.put(elfo.getStatus(), elfo);
-        }
+    public void agruparPorStatus(){
+       for(Elfo elfo : exercito.values()){
+           if(!exercitoAgrupado.containsKey(elfo.getStatus()))
+               exercitoAgrupado.put(elfo.getStatus(), new ArrayList<Elfo>());
+           exercitoAgrupado.get(elfo.getStatus()).add(elfo);
+       }
     }
     
     public ArrayList<Elfo> buscar(Status status) {
-        ArrayList<Elfo> array = new ArrayList<>();
-        
-        for (HashMap.Entry<Status, Elfo> entry : exercitoAgrupado.entrySet()) {
-            if (entry.getKey() == status) {
-                array.add(entry.getValue());
-            }
-        }
-        
-        return array;
-    }
+       return exercitoAgrupado.get(status);
+    }    
 }

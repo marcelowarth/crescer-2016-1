@@ -41,6 +41,6 @@ public class ExercitoDeElfosTest
         exercito.agruparPorStatus();
         
         assertEquals(1, exercito.buscar(Status.MORTO).size());
-        //assertEquals(2, exercito.buscar(Status.VIVO).size()); //Esta substituindo nao sei o motivo
+        assertEquals(2, exercito.buscar(Status.VIVO).size());
     }
 }
