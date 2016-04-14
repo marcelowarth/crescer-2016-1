@@ -47,4 +47,11 @@ public class Elfo extends Personagem{
     public static int getNumElfos() {
         return contaElfos;
     }
+    
+    public boolean equals(Object obj) {
+        Elfo outro = (Elfo)obj;
+        return this.getFlechas() == outro.getFlechas() && 
+        this.getNome() == outro.getNome() &&
+        this.getVida() == outro.getVida();
+    }
 }

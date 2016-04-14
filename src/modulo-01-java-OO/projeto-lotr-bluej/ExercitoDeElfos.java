@@ -21,7 +21,15 @@ public class ExercitoDeElfos
         }
     }
     
-    public HashMap getExercitoAgrupado() {
-        return exercito;
+    public ArrayList<Elfo> buscar(Status status) {
+        ArrayList<Elfo> array = new ArrayList<>();
+        
+        for (HashMap.Entry<Status, Elfo> entry : exercitoAgrupado.entrySet()) {
+            if (entry.getKey() == status) {
+                array.add(entry.getValue());
+            }
+        }
+        
+        return array;
     }
 }
