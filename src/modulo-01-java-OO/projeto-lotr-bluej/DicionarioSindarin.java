@@ -7,6 +7,15 @@ public class DicionarioSindarin
         System.out.println("Bem vindo ao tradutor Sindarin! Escolha a linguagem: ");
         System.out.println("[P]ortuguês [I]nglês");
         String idioma = scanner.nextLine();
+        TradutorSindarin tradutor = criarTradutor(idioma);
+        System.out.println("Digite a palavra a traduzir: ");
+        String palavra = scanner.nextLine();
+        System.out.println("Palavra " + palavra + " significa " + 
+                        tradutor.traduzir(palavra.toLowerCase()));
+        // radarExemplosHashMap();
+    }
+    
+    private static TradutorSindarin criarTradutor(String idioma) {
         TradutorSindarin tradutor = null;
         switch (idioma.toLowerCase()) {
             case "i":
@@ -16,11 +25,7 @@ public class DicionarioSindarin
                 tradutor = new SindarinParaPortugues();
                 break;
         }
-        System.out.println("Digite a palavra a traduzir: ");
-        String palavra = scanner.nextLine();
-        System.out.println("Palavra " + palavra + " significa " + 
-                        tradutor.traduzir(palavra.toLowerCase()));
-        // radarExemplosHashMap();
+        return tradutor;
     }
     
     private static void rodarExemplosHashMap() {
