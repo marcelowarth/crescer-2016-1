@@ -46,4 +46,6 @@ public abstract class Personagem
     protected void morreu() {
         this.status = Status.MORTO;
     }
+    
+    public abstract void tentarSorte();
 }

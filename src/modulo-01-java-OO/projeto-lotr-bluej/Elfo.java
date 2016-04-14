@@ -54,4 +54,8 @@ public class Elfo extends Personagem{
         this.getNome() == outro.getNome() &&
         this.getVida() == outro.getVida();
     }
+    
+    public void tentarSorte() {
+        System.out.println("Elfo tentou a sorte!!");
+    }
 }
