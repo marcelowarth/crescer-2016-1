@@ -3,7 +3,6 @@ import java.util.*;
 public class ArteDaGuerra implements Taticas
 {
     ArrayList<Elfo> ordemDoAtaque = new ArrayList<>();
-    int intencoes = 0;
     int numNoturnos = 0;
     int ataquesMaxNoturnos = 0;
     int notJaUsados = 0;
@@ -12,14 +11,18 @@ public class ArteDaGuerra implements Taticas
         ordemDoAtaque.clear();
         calculos(elfos, dwarfs);
         for (Elfo en : elfos) {
-            if(notJaUsados >= ataquesMaxNoturnos)
-                continue;
-            if(en instanceof ElfoNoturno)
-                notJaUsados++;
+            boolean atacou = false;
             for(Dwarf d : dwarfs){
+                if(en instanceof ElfoNoturno && notJaUsados < ataquesMaxNoturnos) {
+                    notJaUsados++;
+                } else if (en instanceof ElfoNoturno && notJaUsados >= ataquesMaxNoturnos) {
+                    continue;
+                }
                 en.atirarFlechaDwarfs(d);
+                atacou = true;
             }
-            ordemDoAtaque.add(en);
+            if(atacou)
+                ordemDoAtaque.add(en);
         }
     }
     
@@ -28,12 +31,10 @@ public class ArteDaGuerra implements Taticas
     }
     
     private void calculos(ArrayList<Elfo> elfos, ArrayList<Dwarf> dwarfs) {
-        intencoes = elfos.size()*dwarfs.size();
+        ataquesMaxNoturnos =  ((int)((elfos.size() * dwarfs.size()) * 0.30));
         for (Elfo en : elfos) {
             if(en instanceof ElfoNoturno)
                 numNoturnos++;
         }
-        double atqN = intencoes*0.3;
-        ataquesMaxNoturnos = (int)atqN;
     }
 }
