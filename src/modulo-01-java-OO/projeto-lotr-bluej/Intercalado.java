@@ -2,11 +2,11 @@ import java.util.*;
 
 public class Intercalado implements Taticas
 {
-    ArrayList<Elfo> ordemDoAtaque = new ArrayList<>();
+    ArrayList<Elfo> ordemDoAtaque = null;
     
     public void atacar(ArrayList<Elfo> elfos, ArrayList<Dwarf> dwarfs) {
         organiza(elfos);
-        if(!ordemDoAtaque.isEmpty()) {
+        if(ordemDoAtaque != null) {
             for (Elfo en : ordemDoAtaque) {
                 for(Dwarf d : dwarfs){
                     en.atirarFlechaDwarfs(d);
@@ -32,6 +32,7 @@ public class Intercalado implements Taticas
         
         if(noturnos.size() == verdes.size()) {
             for (int i = 0; i < noturnos.size(); i++) {
+                ordemDoAtaque = new ArrayList<>();
                 ordemDoAtaque.add(noturnos.get(i));
                 ordemDoAtaque.add(verdes.get(i));
             }

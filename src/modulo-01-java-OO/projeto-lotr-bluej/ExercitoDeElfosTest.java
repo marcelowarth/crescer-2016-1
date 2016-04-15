@@ -2,6 +2,7 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import java.util.*;
 
 public class ExercitoDeElfosTest
 {
@@ -43,4 +44,132 @@ public class ExercitoDeElfosTest
         assertEquals(1, exercito.buscar(Status.MORTO).size());
         assertEquals(2, exercito.buscar(Status.VIVO).size());
     }
+    
+    @Test
+    public void exercitoAtacaNoturnosUltimo() {
+        Elfo e1 = new ElfoNoturno("ASD");
+        Elfo e2 = new ElfoNoturno("ASD2");
+        Elfo e3 = new ElfosVerdes("ASD3");
+        Elfo e4 = new ElfosVerdes("ASD4");
+        ExercitoDeElfos exercito = new ExercitoDeElfos();
+        exercito.alistaElfo(e1);
+        exercito.alistaElfo(e2);
+        exercito.alistaElfo(e3);
+        exercito.alistaElfo(e4);
+        
+        ArrayList<Dwarf> dwarfs = new ArrayList<>();
+        dwarfs.add(new Dwarf("d1"));
+        dwarfs.add(new Dwarf("d2"));
+        
+        exercito.atacar(dwarfs);
+        
+        ArrayList<Elfo> obtido = exercito.getOrdemDoUltimoAtaque();
+        
+        boolean saiuVerdes = false, erro = false;
+        for(Elfo e : obtido) {
+            if(e instanceof ElfoNoturno && !saiuVerdes) {
+                saiuVerdes = true;
+            }
+            if(e instanceof ElfosVerdes && saiuVerdes) {
+                erro = true;
+            }
+        }
+        
+        assertFalse(erro);        
+    }
+    
+    @Test
+    public void exercitoAtacaArteDaGuerra() {
+        Elfo e1 = new ElfoNoturno("ASD");
+        Elfo e2 = new ElfoNoturno("ASD2");
+        Elfo e3 = new ElfosVerdes("ASD3");
+        Elfo e4 = new ElfosVerdes("ASD4");
+        ExercitoDeElfos exercito = new ExercitoDeElfos();
+        exercito.alistaElfo(e1);
+        exercito.alistaElfo(e2);
+        exercito.alistaElfo(e3);
+        exercito.alistaElfo(e4);
+        
+        ArrayList<Dwarf> dwarfs = new ArrayList<>();
+        dwarfs.add(new Dwarf("d1"));
+        dwarfs.add(new Dwarf("d2"));
+        
+        exercito.mudarEstrategia(new ArteDaGuerra());
+        exercito.atacar(dwarfs);
+        
+        ArrayList<Elfo> obtido = exercito.getOrdemDoUltimoAtaque();
+        
+        assertEquals(3, obtido.size());
+    }
+    
+    @Test
+    public void exercitoAtacaIntercalado() {
+        Elfo e1 = new ElfoNoturno("ASD");
+        Elfo e2 = new ElfoNoturno("ASD2");
+        Elfo e3 = new ElfosVerdes("ASD3");
+        Elfo e4 = new ElfosVerdes("ASD4");
+        ExercitoDeElfos exercito = new ExercitoDeElfos();
+        exercito.alistaElfo(e1);
+        exercito.alistaElfo(e2);
+        exercito.alistaElfo(e3);
+        exercito.alistaElfo(e4);
+        
+        ArrayList<Dwarf> dwarfs = new ArrayList<>();
+        dwarfs.add(new Dwarf("d1"));
+        dwarfs.add(new Dwarf("d2"));
+        
+        exercito.mudarEstrategia(new Intercalado());
+        exercito.atacar(dwarfs);
+        
+        ArrayList<Elfo> obtido = exercito.getOrdemDoUltimoAtaque();
+        
+        boolean ordemCerta = true;
+        String tipoUltimo = "";
+        for(Elfo e : obtido) {
+            if(e instanceof ElfoNoturno && ordemCerta && tipoUltimo != e.getClass().getName()) {
+                tipoUltimo = obtido.getClass().getName();
+            } else if(e instanceof ElfosVerdes && ordemCerta && tipoUltimo != e.getClass().getName()) {
+                tipoUltimo = obtido.getClass().getName();
+            } else {
+                ordemCerta = false;
+                break;
+            }
+        }
+        
+        assertTrue(ordemCerta);
+    }
+    
+    @Test
+    public void exercitoAtacaIntercaladoNull() {
+        Elfo e1 = new ElfoNoturno("ASD");
+        Elfo e2 = new ElfoNoturno("ASD2");
+        Elfo e4 = new ElfosVerdes("ASD4");
+        ExercitoDeElfos exercito = new ExercitoDeElfos();
+        exercito.alistaElfo(e1);
+        exercito.alistaElfo(e2);
+        exercito.alistaElfo(e4);
+        
+        ArrayList<Dwarf> dwarfs = new ArrayList<>();
+        dwarfs.add(new Dwarf("d1"));
+        dwarfs.add(new Dwarf("d2"));
+        
+        exercito.mudarEstrategia(new Intercalado());
+        exercito.atacar(dwarfs);
+        
+        ArrayList<Elfo> obtido = exercito.getOrdemDoUltimoAtaque();
+        
+        assertNull(obtido);
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+

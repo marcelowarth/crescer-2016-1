@@ -48,4 +48,25 @@ public class IntercaladoTest
         
         assertTrue(ordemCerta);
     }
+    
+    @Test
+    public void testaIntercaladoSem5050() {
+        Elfo e1 = new ElfoNoturno("ASD");
+        Elfo e3 = new ElfosVerdes("ASD3");
+        Elfo e4 = new ElfosVerdes("ASD4");
+        ExercitoDeElfos exercito = new ExercitoDeElfos();
+        exercito.alistaElfo(e1);
+        exercito.alistaElfo(e3);
+        exercito.alistaElfo(e4);
+        
+        ArrayList<Dwarf> dwarfs = new ArrayList<>();
+        dwarfs.add(new Dwarf("d1"));
+        dwarfs.add(new Dwarf("d2"));
+        
+        Intercalado in = new Intercalado();
+        exercito.agruparPorStatus();
+        in.atacar(exercito.buscar(Status.VIVO), dwarfs);
+        
+        assertNull(in.getOrdemDoUltimoAtaque());
+    }
 }
