@@ -3,9 +3,11 @@ import java.util.*;
 public class Intercalado implements Taticas
 {
     ArrayList<Elfo> ordemDoAtaque = null;
+    private HashMap<Status, ArrayList<Elfo>> exercitoAgrupado = new HashMap<>();
     
     public void atacar(ArrayList<Elfo> elfos, ArrayList<Dwarf> dwarfs) {
-        organiza(elfos);
+        agruparPorStatus(elfos);
+        organiza(buscar(Status.VIVO));
         if(ordemDoAtaque != null) {
             for (Elfo en : ordemDoAtaque) {
                 for(Dwarf d : dwarfs){
@@ -37,5 +39,18 @@ public class Intercalado implements Taticas
                 ordemDoAtaque.add(verdes.get(i));
             }
         }
+    }
+    
+    public void agruparPorStatus(ArrayList<Elfo> exercito){
+       exercitoAgrupado.clear();
+       for(Elfo elfo : exercito){
+           if(!exercitoAgrupado.containsKey(elfo.getStatus()))
+               exercitoAgrupado.put(elfo.getStatus(), new ArrayList<Elfo>());
+           exercitoAgrupado.get(elfo.getStatus()).add(elfo);
+       }
+    }
+    
+    public ArrayList<Elfo> buscar(Status status) {
+       return exercitoAgrupado.get(status);
     }
 }

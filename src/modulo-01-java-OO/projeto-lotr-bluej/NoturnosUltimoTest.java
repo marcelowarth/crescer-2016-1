@@ -12,7 +12,7 @@ public class NoturnosUltimoTest
     }
     
     @Test
-    public void testaNoturnosUltimo() {
+    public void NoturnosUltimo() {
         Elfo e1 = new ElfoNoturno("ASD");
         Elfo e2 = new ElfoNoturno("ASD2");
         Elfo e3 = new ElfosVerdes("ASD3");

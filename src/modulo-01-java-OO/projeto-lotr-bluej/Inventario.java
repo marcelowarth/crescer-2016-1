@@ -36,10 +36,13 @@ public class Inventario
     }
     
     public Item maisPopular() {
-        Item itemMais = inventario.get(0);
-        for(int i = 1; i < inventario.size(); i++) {
-            if (itemMais.getQtde()<inventario.get(i).getQtde()) {
-                itemMais = inventario.get(i);
+        Item itemMais = null;
+        if(!inventario.isEmpty()){
+            itemMais = inventario.get(0);
+            for(int i = 1; i < inventario.size(); i++) {
+                if (itemMais.getQtde()<inventario.get(i).getQtde()) {
+                    itemMais = inventario.get(i);
+                }
             }
         }
         return itemMais;

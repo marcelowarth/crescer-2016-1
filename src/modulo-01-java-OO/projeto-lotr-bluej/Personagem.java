@@ -1,8 +1,8 @@
 public abstract class Personagem
 {
     protected String nome;
-    protected int experiencia = 0;
-    protected double vida = 0;
+    protected int experiencia;
+    protected double vida;
     protected Status status = Status.VIVO;
     protected Inventario inventario = new Inventario();
 
@@ -41,10 +41,6 @@ public abstract class Personagem
     
     public Status getStatus() {
         return status;
-    }
-    
-    protected void morreu() {
-        this.status = Status.MORTO;
     }
     
     public abstract void tentarSorte();

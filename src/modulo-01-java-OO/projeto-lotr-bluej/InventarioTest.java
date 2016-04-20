@@ -49,6 +49,12 @@ public class InventarioTest
     }
     
     @Test
+    public void MaisPopularVazio() {
+        Inventario inv = new Inventario();
+        assertEquals(null, inv.maisPopular());
+    }
+    
+    @Test
     public void ultimoMaisPopular() {
         Inventario inv = new Inventario();
         Item item = new Item("Adaga", 1);

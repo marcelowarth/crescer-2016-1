@@ -12,13 +12,14 @@ public class ExercitoDeElfos
         }
     }
     
-    public HashMap getExercito() {
+    public HashMap<String, Elfo> getExercito() {
         return exercito;
     }
     
     public void atacar(ArrayList<Dwarf> alvos) {
         this.agruparPorStatus();
-        this.tatica.atacar(buscar(Status.VIVO), alvos);
+        ArrayList<Elfo> elfos = new ArrayList<Elfo>(exercito.values());
+        this.tatica.atacar(elfos, alvos);
     }
     
     public ArrayList<Elfo> getOrdemDoUltimoAtaque() {

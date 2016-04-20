@@ -20,7 +20,11 @@ public class ElfoNoturno extends Elfo
             super.flechas--;
             super.vida -= (super.vida*0.05);
             if (super.getVida() < 1)
-                super.morreu();
+                this.morreu();
         }
+    }
+    
+    protected void morreu() {
+        this.status = Status.MORTO;
     }
 }
