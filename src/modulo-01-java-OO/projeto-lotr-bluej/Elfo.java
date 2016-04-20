@@ -1,7 +1,6 @@
 public class Elfo extends Personagem{
     protected int flechas = 42;
     private int ganhaExp = 1;
-    private String toString;
     private static int contaElfos;
     
     public Elfo(String nome) {
@@ -40,7 +39,7 @@ public class Elfo extends Personagem{
     }
     
     public String toString() {
-        toString = nome + " possui " + flechas + "flechas e " + super.experiencia + " níveis de experiência.";
+        String toString = nome + " possui " + flechas + "flechas e " + super.experiencia + " níveis de experiência.";
         return toString;
     }
     
