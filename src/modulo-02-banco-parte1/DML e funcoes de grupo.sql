@@ -63,4 +63,5 @@ where Nome IN (select Distinct Nome from Cidade group by Nome having (COUNT(*) >
 	and IDCidade NOT IN (select Distinct MIN(IDCidade) from Cidade group by Nome having (COUNT(*) > 1))
 
 ---15
----update Cidade 
+alter table Cidade
+	Add constraint Cons_Nome_UF UNIQUE(Nome, UF)
