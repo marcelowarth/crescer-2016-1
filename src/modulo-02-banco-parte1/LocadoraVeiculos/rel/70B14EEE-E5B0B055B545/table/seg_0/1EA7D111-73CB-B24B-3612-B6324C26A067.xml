@@ -1,0 +1,45 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1EA7D111-73CB-B24B-3612-B6324C26A067" name="Cliente">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:40:05 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<ordsAlias>table_10</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDCliente" id="0F0FDC22-03F9-B6F5-3FF4-486D9F5A4114">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:40:52 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Fisico_Juridico" id="74576D80-4D0E-84C2-7517-C8F086B4CB4F">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:46:05 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DBCACC8A-69CD-2EF3-19CF-148872AC4A44" name="Cliente_PK">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:40:52 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0F0FDC22-03F9-B6F5-3FF4-486D9F5A4114"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

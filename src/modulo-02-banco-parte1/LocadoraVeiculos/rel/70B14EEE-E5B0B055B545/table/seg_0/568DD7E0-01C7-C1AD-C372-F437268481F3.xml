@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="568DD7E0-01C7-C1AD-C372-F437268481F3" name="Juridica">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:43:45 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<ordsAlias>table_12</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDJuridica" id="1E833D51-9426-A6B9-8042-536639211BDA">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:45:08 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nome" id="0AE1FF48-C22C-0B50-EE45-FCE4CE629CD0">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:45:08 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Endereco" id="4ABF1539-DF5C-9525-9191-22C3AB1CC541">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:45:08 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CNPJ" id="953E9412-7B3B-65EA-0FE6-B5703428820A">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:45:08 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Telefone" id="68887F11-7043-CC3B-C39B-63B1F3EA1E4D">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:45:08 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Cliente_IDCliente" id="2B97666C-A369-BF37-451C-D213D38855C6">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:45:20 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A9EDF031-1E3A-B5C6-D5AE-5044F27E277E" referredColumn="0F0FDC22-03F9-B6F5-3FF4-486D9F5A4114"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="76392E30-E2D3-FDFA-D0F6-3917D3DDCA53" name="Juridica_PK">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:45:08 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1E833D51-9426-A6B9-8042-536639211BDA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2144806C-6848-7BA1-6E8D-B680E0637132" name="Juridica_Cliente_FK">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:45:20 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2B97666C-A369-BF37-451C-D213D38855C6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

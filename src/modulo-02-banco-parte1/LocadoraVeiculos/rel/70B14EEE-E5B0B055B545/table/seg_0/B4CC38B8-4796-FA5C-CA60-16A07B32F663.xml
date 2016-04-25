@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B4CC38B8-4796-FA5C-CA60-16A07B32F663" name="Condutor_Locacao">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:47:49 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<ordsAlias>table_14</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDCondutor_Locacao" id="15DDC17E-BA2D-84FD-1913-DB7CF6A67A1E">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:48:13 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Locacao_IDLocacao" id="4113A95A-C81F-89FD-F3E2-9BB2C0090761">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:48:25 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DA57F66C-0080-C770-1DE6-754DF46F310D" referredColumn="86F93A26-87B0-01C5-4366-21973C508753"/>
+</associations>
+</Column>
+<Column name="Condutor_IDCondutor" id="BCD779C7-C5B9-314A-2F26-8C14CF6E9761">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:48:33 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9687CA9C-E327-D378-64DC-CE87EF8F9EC9" referredColumn="3137CDB0-469F-BA5E-0DF2-4589B4D1811D"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="85DF0CF7-2D94-89B7-FC2F-65F0542AE4D4" name="Condutor_Locacao_PK">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:48:13 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="15DDC17E-BA2D-84FD-1913-DB7CF6A67A1E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1DFC1A44-868E-6410-400C-31F96F1E195A" name="Condutor_Locacao_Locacao_FK">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:48:25 UTC</createdTime>
+<generatorID>FE6A4466-E559-4E14-8BF2-39A3D67D495F</generatorID>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4113A95A-C81F-89FD-F3E2-9BB2C0090761"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="81966302-AFA2-1DF6-E86F-872A87F85015" name="Condutor_Locacao_Condutor_FK">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:48:33 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BCD779C7-C5B9-314A-2F26-8C14CF6E9761"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

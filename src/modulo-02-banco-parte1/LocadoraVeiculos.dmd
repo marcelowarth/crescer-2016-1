@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="LocadoraVeiculos" id="FFF8A948-CF48-7FAB-B61E-DE128A9906FB" version="3.5">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:13:13 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>FFF8A948-CF48-7FAB-B61E-DE128A9906FB</designId>
+</OSDM_Design>

@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DCCAC510-E10B-CBE1-6036-048305CDE5D8" name="Fisica">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:41:04 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<ordsAlias>table_11</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDFisica" id="D81EE278-C939-FC84-5044-70788B684F80">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:42:51 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nome" id="C46172BF-008F-52A1-7896-C85D41034FC5">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:42:51 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Endereco" id="F4180837-77A5-A4B6-3F28-25F55FC1A0B0">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:42:51 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CNH" id="59C1240B-B355-D559-8481-171AAB35CB27">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:42:51 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CPF" id="22CFF183-5B7A-8CD5-E3C8-CA169E9D96D9">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:42:51 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Telefone" id="A9461180-FA66-DE27-B8DF-D41703243D74">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:42:51 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Cliente_IDCliente" id="AB860299-76DA-ABE0-E71F-53DFA97E7F6D">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:43:17 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="37DBF8F4-9059-B170-513B-D27769D6F5B1" referredColumn="0F0FDC22-03F9-B6F5-3FF4-486D9F5A4114"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5CDAF023-FBC7-3D15-F904-CA132B7E8F30" name="Fisica_PK">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:42:51 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D81EE278-C939-FC84-5044-70788B684F80"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="20732247-9CBA-7B52-F901-F3DB478CF13F" name="Fisica_Cliente_FK">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:43:17 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AB860299-76DA-ABE0-E71F-53DFA97E7F6D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

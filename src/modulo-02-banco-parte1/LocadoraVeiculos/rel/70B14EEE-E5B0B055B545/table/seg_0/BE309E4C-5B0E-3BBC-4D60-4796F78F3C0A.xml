@@ -1,0 +1,55 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BE309E4C-5B0E-3BBC-4D60-4796F78F3C0A" name="Condutor">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:46:40 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<ordsAlias>table_13</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDCondutor" id="3137CDB0-469F-BA5E-0DF2-4589B4D1811D">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:47:36 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nome" id="214D6004-12AE-2A5B-2C68-74874DBFD855">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:47:36 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CNH" id="D453B36C-D138-05BB-CFB5-24DA95AE02F0">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:47:36 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7CCB38B4-D1D2-1EBE-B0CB-A1E6D23FBD48" name="Condutor_PK">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:47:36 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3137CDB0-469F-BA5E-0DF2-4589B4D1811D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

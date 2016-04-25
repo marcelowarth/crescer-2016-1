@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="41E3006C-B21E-0702-779C-A68935403695" name="Locacao_Veiculo">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:26:24 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<ordsAlias>relation_4</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDLocacao_Veiculo" id="737B1363-72D5-0948-25EF-041E1D3E6990">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:35:48 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Locacao_IDLocacao" id="B2A57FAE-B185-9791-E9E6-599CA2393FD4">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:26:24 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="09CFDE1C-F78A-D77E-250F-C60882DBADAD" referredColumn="86F93A26-87B0-01C5-4366-21973C508753"/>
+</associations>
+</Column>
+<Column name="Veiculo_IDVeiculo" id="9FDFC1C8-DAA4-D9EB-6D6A-399C3F23C122">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:26:24 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FAAF964C-D9D7-E1F0-4EB7-83CA43FAB411" referredColumn="8B8EBAD1-1656-9327-5959-59FE81EC2391"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A1E641F1-7872-864A-160E-1F28FF853156" name="Relation_4_PK">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:26:24 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="737B1363-72D5-0948-25EF-041E1D3E6990"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="309A9ECC-B469-00A3-F243-0F1AB65653BA" name="FK_Locacaov1">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:26:24 UTC</createdTime>
+<generatorID>1142CAA4-2D4D-3F1A-7F9D-BA2EC2205951</generatorID>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B2A57FAE-B185-9791-E9E6-599CA2393FD4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="581B09FF-7A28-E5E6-7390-442DC0678BE1" name="FK_Veiculov1">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:26:24 UTC</createdTime>
+<generatorID>1142CAA4-2D4D-3F1A-7F9D-BA2EC2205951</generatorID>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9FDFC1C8-DAA4-D9EB-6D6A-399C3F23C122"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

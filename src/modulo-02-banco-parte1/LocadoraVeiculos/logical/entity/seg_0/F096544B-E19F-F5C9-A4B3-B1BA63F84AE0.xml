@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F096544B-E19F-F5C9-A4B3-B1BA63F84AE0" name="AdicionaisVeic">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:25:25 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<engineerTo>
+<item key="70B14EEE-6433-5D9C-2FAA-E5B0B055B545" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDAdicional" id="F27B208F-5463-3F2E-D822-619D57FE2652">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:25:33 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<engineerTo>
+<item key="70B14EEE-6433-5D9C-2FAA-E5B0B055B545" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Desc" id="2ECB245F-7D03-DC4E-CEAF-DF11A91012E3">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:25:47 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<engineerTo>
+<item key="70B14EEE-6433-5D9C-2FAA-E5B0B055B545" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="FD3E7190-6B78-8A24-98EA-B20C6A090778" name="AdicionaisVeic PK">
+<createdBy>Marcelo</createdBy>
+<createdTime>2016-04-25 00:25:45 UTC</createdTime>
+<ownerDesignName>LocadoraVeiculos</ownerDesignName>
+<engineerTo>
+<item key="70B14EEE-6433-5D9C-2FAA-E5B0B055B545" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F27B208F-5463-3F2E-D822-619D57FE2652</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
