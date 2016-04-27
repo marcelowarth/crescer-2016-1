@@ -5,8 +5,9 @@ body {
 
 #div_menu {
   border-style: solid;
-  border-radius: 25px;
-  width: 40%;
+  border-radius: 15px;
+  width: 500px;
+  height: 50px;
   border-color: rgb(140, 140, 140);
   background-color: rgba(140, 140, 140, 0.6);
   margin: 330px auto 0px auto;
@@ -33,7 +34,7 @@ body {
 }
 
 #div_info {
-  width: 50%;
+  width: 700px;
   min-height: 100px;
   margin: 50px auto;
   box-sizing: border-box;
