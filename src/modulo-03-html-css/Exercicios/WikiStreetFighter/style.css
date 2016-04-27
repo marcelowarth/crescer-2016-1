@@ -3,7 +3,7 @@ body {
   background-position: top center;
 }
 
-#div_menu {
+#div-menu {
   border-style: solid;
   border-radius: 15px;
   width: 500px;
@@ -13,7 +13,7 @@ body {
   margin: 330px auto 0px auto;
 }
 
-#div_menu ul {
+#div-menu ul {
   font-weight: bold;
   font-family: arial;
   color: white;
@@ -22,25 +22,25 @@ body {
   padding: 0px;
 }
 
-#div_menu li {
+#div-menu li {
   display: inline;
   text-align: center;
   margin: 0px 5%;
 }
 
-#div_menu a {
+#div-menu a {
   color: white;
   text-decoration: none;
 }
 
-#div_info {
+#div-info {
   width: 700px;
   min-height: 100px;
   margin: 50px auto;
   box-sizing: border-box;
 }
 
-#div_info_top {
+#div-info-top {
   width: 100%;
   background-color: grey;
   min-height: 20px;
@@ -48,7 +48,7 @@ body {
   padding: 10px;
 }
 
-#div_info_top h1 {
+#div-info-top h1 {
   font-weight: bold;
   font-family: arial;
   color: white;
@@ -56,7 +56,7 @@ body {
   box-sizing: border-box;
 }
 
-#div_info_middle {
+#div-info-middle {
   width: 100%;
   background-color: rgb(200, 200, 200);
   min-height: 100px;
@@ -66,6 +66,10 @@ body {
   overflow-y: auto;
 }
 
-#div_info_middle h2 {
+#div-info-middle h2 {
   margin-top: 0px;
+}
+
+.img-float-left {
+  float: left;
 }
