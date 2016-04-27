@@ -1,0 +1,70 @@
+body {
+  background-image: url(img/streefighter.jpg); background-repeat: no-repeat;
+  background-position: top center;
+}
+
+#div_menu {
+  border-style: solid;
+  border-radius: 25px;
+  width: 40%;
+  border-color: rgb(140, 140, 140);
+  background-color: rgba(140, 140, 140, 0.6);
+  margin: 330px auto 0px auto;
+}
+
+#div_menu ul {
+  font-weight: bold;
+  font-family: arial;
+  color: white;
+  list-style-type: none;
+  text-align: center;
+  padding: 0px;
+}
+
+#div_menu li {
+  display: inline;
+  text-align: center;
+  margin: 0px 5%;
+}
+
+#div_menu a {
+  color: white;
+  text-decoration: none;
+}
+
+#div_info {
+  width: 50%;
+  min-height: 100px;
+  margin: 50px auto;
+  box-sizing: border-box;
+}
+
+#div_info_top {
+  width: 100%;
+  background-color: grey;
+  min-height: 20px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+#div_info_top h1 {
+  font-weight: bold;
+  font-family: arial;
+  color: white;
+  font-size: 30px;
+  box-sizing: border-box;
+}
+
+#div_info_middle {
+  width: 100%;
+  background-color: rgb(200, 200, 200);
+  min-height: 100px;
+  font-family: arial;
+  font-size: 18px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+#div_info_middle h2 {
+  margin-top: 0px;
+}
