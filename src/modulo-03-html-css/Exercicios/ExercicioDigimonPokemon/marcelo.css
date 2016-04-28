@@ -1,0 +1,30 @@
+/* Elimina não necessário */
+body > header > h1 > span:nth-of-type(1) {
+  display: none;
+}
+
+div > article > h2:nth-of-type(2) {
+  display: none;
+}
+
+div > article > ul:nth-of-type(2) {
+  display: none;
+}
+
+aside {
+  display: none;
+}
+
+/* header */
+header {
+  border-style: solid;
+  border-color: blue;
+  border-width: 2px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin-top: 10px;
+}
+
+#imagem-fundo {
+  background-image: url();
+}
