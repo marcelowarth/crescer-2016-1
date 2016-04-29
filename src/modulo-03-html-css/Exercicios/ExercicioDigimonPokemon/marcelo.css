@@ -98,7 +98,7 @@ header > h1 {
   box-sizing: content-box;
   display: inline-block;
   position: relative;
-  min-height: 2900px;
+  min-height: 2500px;
 }
 
 h1, h2, li, footer {
@@ -134,9 +134,9 @@ article {
   float: right;
   width: 39%;
   margin-left: 61%;
-  height: 100%;
   background-image: url("https://imageshack.com/i/pn3Tnsj8p");
   background-repeat: no-repeat;
+  height: 100%;
 }
 
 ul{
