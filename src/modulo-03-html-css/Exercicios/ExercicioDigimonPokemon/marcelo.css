@@ -45,6 +45,7 @@ header > h1 > span:nth-of-type(2) {
   height:110px;
   color: transparent;
   top: -40px;
+  left: 260px;
   transform: rotate(10deg);
 }
 
@@ -68,6 +69,7 @@ header > h1 {
   color: white;
   position: relative;
   left: 170px;
+  font-size: 30px;
   display: table;
 }
 
