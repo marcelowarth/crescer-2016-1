@@ -17,10 +17,9 @@ aside {
 
 /* body */
 body {
-  background-image:  url("https://guikao.files.wordpress.com/2012/01/pokemon_wallpaper01_1680.jpg");
+  background-image:  url("https://imageshack.com/i/poBo0dm5j");
   background-color: #1879D5;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-position: top center;
   background-size: 100%;
   box-sizing: border-box;
@@ -36,8 +35,21 @@ header {
   background-color: red;
 }
 
+header > h1 > span:nth-of-type(2) {
+  position: absolute;
+  float: right;
+  background:url("https://imageshack.com/i/pmOMmubJp") left top;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width:300px;
+  height:110px;
+  color: transparent;
+  top: -40px;
+  transform: rotate(10deg);
+}
+
 .imagem-fundo {
-  background: url("http://orig05.deviantart.net/30d2/f/2010/351/5/7/logo_pkmn_center_by_honokawa-d352y7o.png");
+  background: url("https://imageshack.com/i/pmISKvJKp");
   background-size: 100%;
   background-repeat: no-repeat;
   width: 150px;
@@ -45,6 +57,11 @@ header {
   position: absolute;
   top: 0px;
   left: 20px;
+  transition: transform 2s;
+}
+
+.imagem-fundo:hover {
+  transform: rotate(360deg);
 }
 
 header > h1 {
@@ -77,6 +94,17 @@ header > h1 {
   width: 100%;
   float: left;
   box-sizing: content-box;
+  display: inline-block;
+  position: relative;
+  min-height: 2900px;
+}
+
+h1, h2, li, footer {
+    text-shadow: 0 0 10px blue;
+}
+
+span {
+  text-shadow: 0 0 0 transparent;
 }
 
 article {
@@ -84,24 +112,38 @@ article {
   border-color: black;
   border-width: 5px;
   border-radius: 20px;
-  margin-top: 20px;
   background-color: red;
   float: left;
   position: relative;
   padding-left: 20px;
   color: white;
   box-sizing: border-box;
-  min-height: 2900px; 
 }
 
 .personagens {
   width: 60%;
+  background-image: url("https://imageshack.com/i/pol482xSp");
+  background-position: top center;
+  background-repeat: no-repeat;
 }
 
 .treinadores {
-  width: 38%;
-  margin-left: 2%;
+  position: absolute;
+  float: right;
+  width: 39%;
+  margin-left: 61%;
   height: 100%;
+  background-image: url("https://imageshack.com/i/pn3Tnsj8p");
+  background-repeat: no-repeat;
+}
+
+ul{
+  width: 40%;
+}
+
+li:hover {
+  font-size: 30px;
+  color: yellow;
 }
 
 /* footer */
