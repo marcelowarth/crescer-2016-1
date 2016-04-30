@@ -17,20 +17,54 @@
     <!-- meu css -->
     <link href="css/style.css" rel="stylesheet">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
     <title>Trabalho Final</title>
   </head>
   <body>
-    <header>
-      <label>Projeto Crescer</label>
-      <nav class="navbar navbar-default">
-        <div class="row">
-          <div class="col-md-2"><span class="glyphicon glyphicon-search"></span></div>
-          <div class="col-md-2"></div>
-          <div class="col-md-2"></div>
-          <div class="col-md-3">Logout <span class="glyphicon glyphicon-chevron-down"></span></div>
-          <div class="col-md-3"></div>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Projeto Crescer</a>
         </div>
-      </nav>
-    </header>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-th"></span></a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-globe"></span></li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Logout <span class="glyphicon glyphicon-chevron-down"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Page 1-1</a></li>
+              <li><a href="#">Page 1-2</a></li>
+              <li><a href="#">Page 1-3</a></li>
+            </ul>
+          </li>
+          <li><a href="#"><img src="img/foto.jpg" class="img-rounded" alt="Perfil" width="30px" height="30px"></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="down-header">
+      <div class="navbar navbar-inverse navbar-fixed-left">
+        <a class="navbar-brand" href="#">Brand</a>
+        <ul class="nav navbar-nav">
+          <li class="config-left-menu"><a>DASHBOARD</a></li>
+          <li><a href="index.html">Administrativo <span class="glyphicon glyphicon-chevron-right"></span></a></li>
+          <li class="config-left-menu"><a>CADASTROS</a></li>
+          <li><a href="#">Link3</a></li>
+          <li><a href="#">Link4</a></li>
+        </ul>
+      </div>
+
+      <div class="container">
+       <div class="row">
+         <h2>Left side Navigation bar (Fixed)</h2>
+
+         <p>Left side Navigation</p>
+       </div>
+      </div>
+
+    </div>
+
   </body>
 </html>
