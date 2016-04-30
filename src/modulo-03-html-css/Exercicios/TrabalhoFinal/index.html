@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -22,49 +24,53 @@
 
     <title>Trabalho Final</title>
   </head>
+
   <body>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
         <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
           <a class="navbar-brand" href="#">Projeto Crescer</a>
         </div>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-th"></span></a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-globe"></span></li>
-          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Logout <span class="glyphicon glyphicon-chevron-down"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Page 1-1</a></li>
-              <li><a href="#">Page 1-2</a></li>
-              <li><a href="#">Page 1-3</a></li>
-            </ul>
-          </li>
-          <li><a href="#"><img src="img/foto.jpg" class="img-rounded" alt="Perfil" width="30px" height="30px"></a></li>
-        </ul>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html"><span class="glyphicon glyphicon-blackboard"></span> Administrativo</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-menu-hamburger"></span> Contato</a></li>
+            <li><a href="usuario.html"><span class="glyphicon glyphicon-user"></span> Usuário</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-th"></span></a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-globe"></span></a></li>
+            <li><a class="ajusta-imagem" href="#"><img src="img/foto.jpg" class="img-rounded" alt="Perfil" width="30px" height="30px"></a></li>
+            <li><div class="margem">
+                  <a class="brand-color">Marcelo Moura</a>
+                  <a class="brand-color">marcelo.moura@cwi.com.br</a>
+                </div></li>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
     </nav>
 
-    <div class="down-header">
-      <div class="navbar navbar-inverse navbar-fixed-left">
-        <a class="navbar-brand" href="#">Brand</a>
-        <ul class="nav navbar-nav">
-          <li class="config-left-menu"><a>DASHBOARD</a></li>
-          <li><a href="index.html">Administrativo <span class="glyphicon glyphicon-chevron-right"></span></a></li>
-          <li class="config-left-menu"><a>CADASTROS</a></li>
-          <li><a href="#">Link3</a></li>
-          <li><a href="#">Link4</a></li>
-        </ul>
+    <div class="container">
+      <div class="conteudo">
+
+
       </div>
 
-      <div class="container">
-       <div class="row">
-         <h2>Left side Navigation bar (Fixed)</h2>
+    </div><!-- /.container -->
 
-         <p>Left side Navigation</p>
-       </div>
-      </div>
 
-    </div>
-
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>

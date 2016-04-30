@@ -1,49 +1,24 @@
-li > a > img.img-rounded {
+.brand-color {
+  color: grey;
+  text-align: right;
+  float: left;
+  clear: left;
+}
+
+.brand-color:hover {
+  color: grey;
+  text-decoration: none;
+}
+
+.margem {
+  margin-top: 5px;
+}
+
+.ajusta-imagem {
   position: relative;
   top: -5px;
 }
 
-ul.navbar-right > li:nth-of-type(4) {
-  top: -30px;
-}
-
-.navbar-default {
-  height: 50px;
-  position: fixed;
-  top: 0px;
-  width: 100%;
-}
-
-.down-header {
-  margin-top: 50px;
-  min-height: 10000px;
-}
-
-.navbar-fixed-left {
-  width: 200px;
-  position: fixed;
-  border-radius: 0;
-  height: 100%;
-}
-
-.config-left-menu {
-  color: grey;
-  border-top: solid 1px grey;
-  border-bottom: solid 1px grey;
-}
-
-.navbar-fixed-left .navbar-nav > li {
-  float: none;  /* Cancel default li float: left */
-  width: 199px;
-}
-
-
-.navbar-fixed-left + .container {
-  padding-left: 160px;
-}
-
-/* On using dropdown menu (To right shift popuped) */
-.navbar-fixed-left .navbar-nav > li > .dropdown-menu {
-  margin-top: -50px;
-  margin-left: 140px;
+.conteudo {
+  margin-top: 62px;
 }
