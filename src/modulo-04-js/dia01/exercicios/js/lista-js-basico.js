@@ -101,15 +101,13 @@ Dica: aproveite toda "beleza" dos algoritmos recursivos! #sqn
 */
 function fiboSum(indice) {
   var i;
-  var fib = []; // Initialize array!
+  var fib = [];
 
   fib[0] = 0;
   fib[1] = 1;
   soma = 1;
   for(i=2; i<=indice; i++)
   {
-      // Next fibonacci number = previous + one before previous
-      // Translated to JavaScript:
       fib[i] = fib[i-2] + fib[i-1];
       soma = soma + fib[i];
   }
@@ -157,12 +155,17 @@ A função deve contar quantas propriedades dentro do objeto informado no primei
 */
 
 function contarPorTipo (obj, tipo) {
-  var eValido = false;
-  var validos = ['string', 'number', 'boolean', 'object', 'undefined', 'null', 'function', 'array'];
-
-  if(validos.indexOf(typeof tipo)) {
-    eValido = true;
+  var soma = 0;
+  for(var i in obj) {
+    if(Array.isArray(obj[i]) && tipo === 'array') {
+      soma++;
+    } else if(obj[i] === null && tipo === 'null') {
+      soma++;
+    } else if(typeof obj[i] === tipo) {
+      soma++;
+    }
   }
+  console.log(soma);
 }
 
 /*
