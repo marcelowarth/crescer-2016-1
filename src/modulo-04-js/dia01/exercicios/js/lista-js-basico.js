@@ -5,30 +5,26 @@ Faça uma função chamada daisyGame que receba por argumento o número de péta
 daisyGame(4); // retorna 'Love me not' */
 function daisyGame(number) {
   if (number%2 === 0) {
-    console.log('Love me not');
+    return 'Love me not';
   } else {
-    console.log('Love me');
+    return 'Love me';
   }
 }
 
 /* Exercício 2
-
+teste
 Maior texto
 
 Faça uma função chamada maiorTexto que receba um array de strings e retorne o texto com maior número de caracteres. */
 
 function maiorTexto(array) {
-  var maior = undefined;
+  var maior = '';
   for (var i = 0; i < array.length; i++) {
-    if(typeof maior === 'undefined') {
+    if(maior.length < array[i].length) {
       maior = array[i];
-    } else {
-      if(maior.length < array[i].length) {
-        maior = array[i];
-      }
     }
   }
-  console.log(maior);
+  return maior;
 }
 
 /*
@@ -67,12 +63,11 @@ function instrutor(value) {
 }
 
 function imprime(array, instrutor) {
-  if(typeof instrutor === 'funtion') {
-    for (var i = 0; i < array.length; i++) {
-      instrutor(array[i]);
-    }
-  } else {
-    throw new TypeError('second parameter is not a valid function, should be "instrutor"');
+  if (typeof instrutor !== 'function') {
+    return;
+  }
+  for (var i = 0; i < array.length; i++) {
+    instrutor(array[i]);
   }
 }
 /*
@@ -86,7 +81,7 @@ adicionar(5642)(8749); // 14391
 
 function adicionar(x){
   return function(y){
-    console.log(x + y);
+    return x + y;
   };
 };
 
@@ -111,7 +106,7 @@ function fiboSum(indice) {
       fib[i] = fib[i-2] + fib[i-1];
       soma = soma + fib[i];
   }
-  console.log(soma);
+  return soma;
 }
 /*
 Quero café
@@ -134,7 +129,7 @@ function queroCafe(mascada, array) {
       i--;
     }
   }
-  console.log(ordena);
+  return ordena.toString();
 }
 /*
 Vários tipos
@@ -157,15 +152,17 @@ A função deve contar quantas propriedades dentro do objeto informado no primei
 function contarPorTipo (obj, tipo) {
   var soma = 0;
   for(var i in obj) {
-    if(Array.isArray(obj[i]) && tipo === 'array') {
-      soma++;
-    } else if(obj[i] === null && tipo === 'null') {
-      soma++;
-    } else if(typeof obj[i] === tipo) {
-      soma++;
+    if (!(Array.isArray(obj[i]) && tipo === 'object')) {
+      if(Array.isArray(obj[i]) && tipo === 'array') {
+        soma++;
+      } else if(obj[i] === null && tipo === 'null') {
+        soma++;
+      } else if(typeof obj[i] === tipo) {
+        soma++;
+      }
     }
   }
-  console.log(soma);
+  return soma;
 }
 
 /*
