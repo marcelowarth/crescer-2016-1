@@ -96,23 +96,27 @@ function obterAlturaMediana() {
 
 function obterPesoMedio(){
   var pesoTot = 0;
+  var cavComPeso = 0;
   for (var i in goldSaints) {
     if ('pesoLb' in goldSaints[i]) {
+      cavComPeso++;
       pesoTot = pesoTot + goldSaints[i].pesoLb;
     }
   }
-  return parseFloat(((pesoTot/12)/2.2046).toFixed(2));
+  return parseFloat(((pesoTot/cavComPeso)/2.2046).toFixed(2));
 }
 
 function obterPesoMedioDoadores() {
   var doadores = obterDoadores();
   var pesoTotDoadores = 0;
+  var cavComPeso = 0;
   for (var i in doadores) {
     if ('pesoLb' in doadores[i]) {
+      cavComPeso++;
       pesoTotDoadores = pesoTotDoadores + doadores[i].pesoLb;
     }
   }
-  return parseFloat(((pesoTotDoadores/doadores.length)/2.2046).toFixed(2));
+  return parseFloat(((pesoTotDoadores/cavComPeso)/2.2046).toFixed(2));
 }
 
 function obterIMC() {
