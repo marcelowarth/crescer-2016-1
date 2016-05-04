@@ -50,3 +50,52 @@ function obterAlturaMediana() {
   };
   return parseFloat((mediana/100).toFixed(2));
 }
+
+function obterPesoMedio(){
+  var pesoTot = 0;
+  for (var i in goldSaints) {
+    if ('pesoLb' in goldSaints[i]) {
+      pesoTot = pesoTot + goldSaints[i].pesoLb;
+    }
+  }
+  return parseFloat(((pesoTot/12)/2.2046).toFixed(2));
+}
+
+function obterPesoMedioDoadores() {
+  var doadores = obterDoadores();
+  var pesoTotDoadores = 0;
+  for (var i in doadores) {
+    if ('pesoLb' in doadores[i]) {
+      pesoTotDoadores = pesoTotDoadores + doadores[i].pesoLb;
+    }
+  }
+  return parseFloat(((pesoTotDoadores/doadores.length)/2.2046).toFixed(2));
+}
+
+function obterIMC() {
+  var indices = [];
+  for (var i in goldSaints) {
+    if ('pesoLb' in goldSaints[i]) {
+      var pesoKg = parseFloat(((goldSaints[i].pesoLb)/2.2046).toFixed(2));
+      var altura = (goldSaints[i].alturaCm/100);
+      var imc = parseFloat((pesoKg/(altura*altura)).toFixed(2));
+      indices.push(imc);
+    }
+  }
+  return indices;
+}
+
+function obterSobrepeso() {
+  var sobrepesos = [];
+  for (var i in goldSaints) {
+    if ('pesoLb' in goldSaints[i]) {
+      var pesoKg = parseFloat(((goldSaints[i].pesoLb)/2.2046).toFixed(2));
+      var altura = (goldSaints[i].alturaCm/100);
+      var imc = parseFloat((pesoKg/(altura*altura)).toFixed(2));
+      if(imc >= 25) {
+        sobrepesos.push(goldSaints[i]);
+      }
+    }
+  }
+  return sobrepesos;
+}

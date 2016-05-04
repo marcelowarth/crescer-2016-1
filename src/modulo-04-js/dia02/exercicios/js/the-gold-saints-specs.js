@@ -23,3 +23,24 @@ describe('Ex5. Altura mediana', function () {
     expect(obterAlturaMediana()).toEqual(1.84);
   });
 });
+
+describe('Ex6. Peso médio', function () {
+  it('Peso médio A = 77.25', function() {
+    expect(obterPesoMedio()).toEqual(77.25);
+  });
+  it('Peso médio B = 80.67', function() {
+    expect(obterPesoMedioDoadores()).toEqual(80.67);
+  });
+});
+
+describe('Ex7. IMC', function () {
+  it('IMC de todos', function() {
+    expect(obterIMC()).toEqual([ 22.64, 29.48, 24.62, 24.22, 24.84, 20.53, 24.54, 24.31, 23.99, 22.45, 21.5 ]);
+  });
+});
+
+describe('Ex8. Sobrepeso', function () {
+  it('deve retornar cavaleiro Aldebaran', function() {
+    expect(obterSobrepeso()).toEqual([goldSaints[1]]);
+  });
+});
