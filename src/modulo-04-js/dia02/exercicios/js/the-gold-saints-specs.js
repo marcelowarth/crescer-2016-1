@@ -12,6 +12,12 @@ describe('Ex2. Canivete suíço', function () {
   });
 });
 
+describe('Ex 3. Aniversários', function () {
+    it("deve retornar Março, Maio e Novembro", function () {
+        expect(obterMesesComMaisAniversarios()).toEqual(["Março", "Maio", "Novembro"]);
+    });
+});
+
 describe('Ex4. Altura média', function () {
   it('altura media deve ser 1.85', function() {
     expect(obterAlturaMedia()).toEqual(1.85);

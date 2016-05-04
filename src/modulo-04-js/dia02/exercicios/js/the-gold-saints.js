@@ -23,9 +23,52 @@ function obterCavaleiroComMaisGolpes() {
   return maisGolpes;
 };
 
-function obterMesesComMaisAniversarios() {
 
-  return;
+function obterMesesComMaisAniversarios() {
+    function getMes(mes) {
+        var meses = new Array();
+        meses[0] = "Janeiro";
+        meses[1] = "Fevereiro";
+        meses[2] = "Março";
+        meses[3] = "Abril";
+        meses[4] = "Maio";
+        meses[5] = "Junho";
+        meses[6] = "Julho";
+        meses[7] = "Agosto";
+        meses[8] = "Setembro";
+        meses[9] = "Outubro";
+        meses[10] = "Novembro";
+        meses[11] = "Dezembro";
+        return meses[mes];
+    }
+    var mesesComQuant = new Array();
+    var mesesMaisAni = new Array();
+    var maxQuant = 0;
+
+    goldSaints.forEach(function(cavaleiro) {
+        var dataNascimento = new Date(cavaleiro.dataNascimento);
+        mesesComQuant.push({
+            mes: dataNascimento.getMonth(),
+            quantPorMes: goldSaints.filter(function(cav) {
+                return new Date(cav.dataNascimento).getMonth() === dataNascimento.getMonth();
+            }).length
+        });
+    });
+
+    mesesComQuant.forEach(function(m) {
+       if(m.quantPorMes > maxQuant)
+           maxQuant = m.quantPorMes;
+    });
+
+    mesesComQuant.filter(function(m) {
+        return m.quantPorMes === maxQuant;
+    })
+    .forEach(function(m) {
+        if(mesesMaisAni.indexOf(getMes(m.mes)) === -1)
+            mesesMaisAni.push(getMes(m.mes));
+    });
+
+    return mesesMaisAni;
 }
 
 function obterAlturaMedia() {
