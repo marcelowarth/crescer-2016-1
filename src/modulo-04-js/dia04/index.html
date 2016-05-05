@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dia 04 - jQuery</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+  </head>
+  <body>
+    <form id="frmNovoCavaleiro" method="POST">
+      <label for="txtNomeCavaleiro">Nome</label>
+      <input id="txtNomeCavaleiro" type="text" name="nome" placeholder="Ex: Shiryu">
+      <label for="slTipoSanguineo">Tipo Sanguíneo</label>
+      <select id="slTipoSanguineo" name="tipoSanguineo">
+        <option>Selecione</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="AB">AB</option>
+        <option value="O">O</option>
+      </select>
+      <label for="txtDtNascimento">Data Nascimento</label>
+      <input id="txtDtNascimento" type="date" name="dataNascimento">
+      <label for="txtAltura">Altura (m)</label>
+      <input id="txtAltura" type="number" name="altura" step="0.01">
+      <label for="txtPeso">Peso (kg)</label>
+      <input id="txtPeso" type="number" name="peso">
+      <label for="slSigno">Signo</label>
+      <select id="slSigno" name="signo">
+        <option value="aries">Áries</option>
+        <option value="touro">Touro</option>
+        <option value="gemeos">Gêmeos</option>
+        <option value="cancer">Câncer</option>
+        <option value="leao">Leão</option>
+        <option value="virgem">Virgem</option>
+        <option value="libra">Libra</option>
+        <option value="escorpiao">Escorpião</option>
+        <option value="sagitario">Sagitário</option>
+        <option value="capricornio">Capricórnio</option>
+        <option value="aquario">Aquário</option>
+        <option value="peixes">Peixes</option>
+      </select>
+      <label for="txtLocalNasc">Local Nascimento</label>
+      <input id="txtLocalNasc" type="text" name="localNascimento" placeholder="Ex: São Leopoldo">
+      <label for="txtLocalTrein">Local Treinamento</label>
+      <input id="txtLocalTrein" type="text" name="localTreinamento" placeholder="Ex: São Leopoldo">
+      <div id='golpe'></div>
+      <button type="button" name="btnAddGolpe">Adicionar Golpe!</button>
+      <div id='imgs'></div>
+      <button type="button" name="btnAddImagem">Adicionar Imagem!</button>
+      <!--
+      <label for="txtUrlImagem">URL Imagem</label>
+      <input id="txtUrlImagem" type="text" name="urlImagem" placeholder="Ex: bit.ly/shiryu.png">
+      -->
+      <!--<input type="submit" value="Cadastrar!">-->
+      <button type="submit">Cadastrar!</button>
+    </form>
+    <hr>
+    <div id="detalhes-cavaleiro"></div>
+    <ul id="cavaleiros"></ul>
+    <script type="text/javascript" src="lib/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="cadastro-cavaleiros.js"></script>
+  </body>
+</html>
