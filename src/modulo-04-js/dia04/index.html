@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Dia 04 - jQuery</title>
     <link rel="stylesheet" type="text/css" href="estilo.css">
+
   </head>
   <body>
     <form id="frmNovoCavaleiro" method="POST">
@@ -42,9 +43,9 @@
       <input id="txtLocalNasc" type="text" name="localNascimento" placeholder="Ex: São Leopoldo">
       <label for="txtLocalTrein">Local Treinamento</label>
       <input id="txtLocalTrein" type="text" name="localTreinamento" placeholder="Ex: São Leopoldo">
-      <div id='golpe'></div>
+      <ul id='golpe'></ul>
       <button type="button" name="btnAddGolpe">Adicionar Golpe!</button>
-      <div id='imgs'></div>
+      <ul id='imgs'></ul>
       <button type="button" name="btnAddImagem">Adicionar Imagem!</button>
       <!--
       <label for="txtUrlImagem">URL Imagem</label>
@@ -56,7 +57,16 @@
     <hr>
     <div id="detalhes-cavaleiro"></div>
     <ul id="cavaleiros"></ul>
+
     <script type="text/javascript" src="lib/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="cadastro-cavaleiros.js"></script>
+    <link href="css/datepicker.css" rel="stylesheet" type="text/css">
+    <link href="css/normalize.css" rel="stylesheet" type="text/css">
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script>
+      $(function() {
+        $( "#txtDtNascimento" ).datepicker({dateFormat: 'dd/mm/yy'});
+      });
+    </script>
   </body>
 </html>
