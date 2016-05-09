@@ -68,14 +68,9 @@ namespace MegaMan1
             if (upgrades.Count < this.MaxUpgrades)
             {
                 upgrades.Add(upgrade);
-                adicionarBonus(upgrade);
+                BonusAtk += upgrade.BonusAtk;
+                BonusDef += upgrade.BonusDef;
             }
-        }
-
-        protected virtual void adicionarBonus(IUpgrade upgrade)
-        {
-            BonusAtk += upgrade.BonusAtk;
-            BonusDef += upgrade.BonusDef;
         }
     }
 }

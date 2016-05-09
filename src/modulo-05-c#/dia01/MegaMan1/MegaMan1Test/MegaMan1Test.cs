@@ -187,7 +187,6 @@ namespace MegaMan1Test
             Assert.AreEqual(bot.Vida, 89);
         }
 
-        /*
         [TestMethod]
         public void RushRecebeCanhaoPlasmaAtaqueCausa6Dano()
         {
@@ -198,7 +197,7 @@ namespace MegaMan1Test
             rush.Atacar(bot);
             Assert.AreEqual(bot.Vida, 94);
         }
-
+        
         [TestMethod]
         public void RushRecebeEscudoDeEnergiaTomaZeroDano()
         {
@@ -237,6 +236,5 @@ namespace MegaMan1Test
             rush.Atacar(bot);
             Assert.AreEqual(bot.Vida, 87);
         }
-        */
     }
 }

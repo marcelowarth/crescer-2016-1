@@ -13,11 +13,19 @@ namespace MegaMan1
 
         }
 
-        protected override int MaxUpgrades
+        protected int BAtk
         {
             get
             {
-                return 2;
+                return base.BonusAtk;
+            }
+        }
+
+        protected int BDef
+        {
+            get
+            {
+                return base.BonusDef;
             }
         }
 
@@ -25,7 +33,7 @@ namespace MegaMan1
         {
             get
             {
-                return 4 + BonusAtk;
+                return 4 + BAtk;
             }
         }
 
@@ -33,10 +41,10 @@ namespace MegaMan1
         {
             get
             {
-                return 3 + BonusDef;
+                return 3 + BDef;
             }
         }
-
+        
         public string Tipo
         {
             get
@@ -63,7 +71,17 @@ namespace MegaMan1
 
         public override void ReceberAtaque(int ataque)
         {
-            base.ReceberAtaque(ataque);
+            int dano = ataque - BDef;
+            bool positive = dano >= 0;
+            if (positive)
+            {
+                this.Vida -= dano;
+            }
+        }
+
+        public override void Atacar(Robo robo)
+        {
+            robo.ReceberAtaque(this.BAtk);
         }
     }
 }
