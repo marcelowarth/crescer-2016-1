@@ -4,3 +4,9 @@ C:\Users\marcelo.moura\Desktop\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\Me
 C:\Users\marcelo.moura\Desktop\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1\bin\Debug\MegaMan1.pdb
 C:\Users\marcelo.moura\Desktop\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1\obj\Debug\MegaMan1.exe
 C:\Users\marcelo.moura\Desktop\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1\obj\Debug\MegaMan1.pdb
+D:\Git\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1\bin\Debug\MegaMan1.exe.config
+D:\Git\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1\obj\Debug\MegaMan1.exe
+D:\Git\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1\obj\Debug\MegaMan1.pdb
+D:\Git\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1\bin\Debug\MegaMan1.exe
+D:\Git\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1\bin\Debug\MegaMan1.pdb
+D:\Git\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1\obj\Debug\MegaMan1.csprojResolveAssemblyReference.cache

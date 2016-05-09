@@ -1,0 +1,8 @@
+D:\Git\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1Test\bin\Debug\MegaMan1Test.dll
+D:\Git\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1Test\bin\Debug\MegaMan1Test.pdb
+D:\Git\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Git\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1Test\obj\Debug\MegaMan1Test.csprojResolveAssemblyReference.cache
+D:\Git\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1Test\obj\Debug\MegaMan1Test.dll
+D:\Git\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1Test\obj\Debug\MegaMan1Test.pdb
+D:\Git\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1Test\bin\Debug\MegaMan1.exe
+D:\Git\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1Test\bin\Debug\MegaMan1.pdb
