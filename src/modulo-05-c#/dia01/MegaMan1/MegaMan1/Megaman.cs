@@ -13,11 +13,16 @@ namespace MegaMan1
 
         }
 
+        public Megaman(Chip chip) : base(chip)
+        {
+
+        }
+
         protected override int Ataque
         {
             get
             {
-                return 6 + BonusAtk;
+                return 6 + BonusAtk + AtaqueChipAtual;
             }
         }
 

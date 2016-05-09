@@ -11,10 +11,47 @@ namespace MegaMan1
         List<IUpgrade> upgrades = new List<IUpgrade>();
         public virtual int BonusAtk { get; set; }
         public virtual int BonusDef { get; set; }
+        private Chip ChipAtual;
 
         public Robo()
         {
             Vida = 100;
+            ChipAtual = Chip.Nivel2;
+        }
+
+        public Robo(Chip chip) : this()
+        {
+            ChipAtual = chip;
+        }
+
+        public int AtaqueChipAtual
+        {
+            get
+            {
+                switch (ChipAtual)
+                {
+                    case Chip.Nivel1:
+                        return -1;
+                    case Chip.Nivel3:
+                        return 2;
+                    default:
+                        return 0;
+                }
+            }
+        }
+
+        public int DefesaChipAtual
+        {
+            get
+            {
+                switch (ChipAtual)
+                {
+                    case Chip.Nivel3:
+                        return 1;
+                    default:
+                        return 0;
+                }
+            }
         }
 
         public int Vida { get; protected set; }
@@ -28,7 +65,7 @@ namespace MegaMan1
         {
             get
             {
-                return 5 + BonusAtk;
+                return 5 + BonusAtk + AtaqueChipAtual;
             }
         }
 
@@ -36,7 +73,7 @@ namespace MegaMan1
         {
             get
             {
-                return 0 + BonusDef;
+                return 0 + BonusDef + DefesaChipAtual;
             }
         }
 
@@ -55,12 +92,12 @@ namespace MegaMan1
             }
         }
 
-        public virtual void ToString()
+        public virtual string ToString()
         {
-            Console.WriteLine("Nome: " + "" 
-                + " Vida: " + this.Vida
-                + " Ataque: " + this.Ataque
-                + " Defesa: " + this.Defesa);
+            return ("Nome: " + "" 
+                + ", Vida: " + this.Vida
+                + ", Ataque: " + this.Ataque
+                + ", Defesa: " + this.Defesa);
         }
 
         public virtual void EquiparUpgrade(IUpgrade upgrade)

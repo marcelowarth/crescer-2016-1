@@ -14,13 +14,18 @@ namespace MegaMan1
 
         }
 
+        public Protoman(Chip chip) : base(chip)
+        {
+
+        }
+
         protected override int Ataque
         {
             get
             {
                 if (Morreu)
                 {
-                    return 7 + BonusAtk;
+                    return 7 + BonusAtk + AtaqueChipAtual;
                 }
                 return base.Ataque;
             }
@@ -30,7 +35,7 @@ namespace MegaMan1
         {
             get
             {
-                return 2 + BonusDef;
+                return 2 + BonusDef + DefesaChipAtual;
             }
         }
 

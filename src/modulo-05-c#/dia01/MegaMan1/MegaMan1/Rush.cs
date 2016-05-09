@@ -13,6 +13,11 @@ namespace MegaMan1
 
         }
 
+        public Rush(Chip chip) : base(chip)
+        {
+
+        }
+
         protected int BAtk
         {
             get
@@ -81,7 +86,10 @@ namespace MegaMan1
 
         public override void Atacar(Robo robo)
         {
-            robo.ReceberAtaque(this.BAtk);
+            if (!(robo is Megaman))
+            {
+                robo.ReceberAtaque(this.Ataque);
+            }
         }
     }
 }

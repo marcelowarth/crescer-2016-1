@@ -236,5 +236,122 @@ namespace MegaMan1Test
             rush.Atacar(bot);
             Assert.AreEqual(bot.Vida, 87);
         }
+        
+        [TestMethod]
+        public void RoboNasceComChipNivel1()
+        {
+            Robo robo = new Megaman(Chip.Nivel1);
+            string esperado = "Nome: , Vida: 100, Ataque: 5, Defesa: 0";
+
+            string atual = robo.ToString();
+
+            Assert.AreEqual(esperado, atual);
+        }
+
+        [TestMethod]
+        public void RoboNasceComChipNivel2()
+        {
+            Robo robo = new Rush(Chip.Nivel2);
+            string esperado = "Nome: , Vida: 100, Ataque: 4, Defesa: 3";
+
+            string atual = robo.ToString();
+
+            Assert.AreEqual(esperado, atual);
+        }
+
+        [TestMethod]
+        public void RoboNasceComChipNivel3()
+        {
+            Robo robo = new Protoman(Chip.Nivel3);
+            string esperado = "Nome: , Vida: 100, Ataque: 7, Defesa: 3";
+
+            string atual = robo.ToString();
+
+            Assert.AreEqual(esperado, atual);
+        }
+
+        [TestMethod]
+        public void RoboNasceSemChips()
+        {
+            Robo robo = new Bot();
+            string esperado = "Nome: , Vida: 100, Ataque: 5, Defesa: 0";
+
+            string atual = robo.ToString();
+
+            Assert.AreEqual(esperado, atual);
+        }
+
+        [TestMethod]
+        public void RoboNasceComChipNivel3EAtaca()
+        {
+            Robo robo = new Protoman(Chip.Nivel3);
+            Robo roboSacrificio = new Robo();
+            string esperado = "Nome: , Vida: 93, Ataque: 5, Defesa: 0";
+
+            robo.Atacar(roboSacrificio);
+            string atual = roboSacrificio.ToString();
+
+            Assert.AreEqual(esperado, atual);
+        }
+
+        [TestMethod]
+        public void RoboNasceComChipNivel3ERecebeAtaqueComDano()
+        {
+            Robo robo = new Protoman(Chip.Nivel3);
+            string esperado = "Nome: , Vida: 97, Ataque: 7, Defesa: 3";
+
+            robo.ReceberAtaque(6);
+            string atual = robo.ToString();
+
+            Assert.AreEqual(esperado, atual);
+        }
+
+        [TestMethod]
+        public void RoboNasceComChipNivel3ERecebeAtaqueSemDano()
+        {
+            Robo robo = new Protoman(Chip.Nivel3);
+            string esperado = "Nome: , Vida: 100, Ataque: 7, Defesa: 3";
+
+            robo.ReceberAtaque(3);
+            string atual = robo.ToString();
+
+            Assert.AreEqual(esperado, atual);
+        }
+
+        [TestMethod]
+        public void RoboNasceComChipRecebeAtaqueDeOutroRoboComChip()
+        {
+            Robo robo = new Protoman(Chip.Nivel1);
+            Robo robo1 = new Robo(Chip.Nivel3);
+            string esperado = "Nome: , Vida: 95, Ataque: 4, Defesa: 2";
+
+            robo1.Atacar(robo);
+            string atual = robo.ToString();
+
+            Assert.AreEqual(esperado, atual);
+        }
+
+        [TestMethod]
+        public void RoboNasceComChipEAtacaComUpgrades()
+        {
+            Robo robo = new Protoman(Chip.Nivel1);
+            robo.EquiparUpgrade(new CanhaoDePlasma());
+            Robo robo1 = new Robo(Chip.Nivel3);
+            string esperado = "Nome: , Vida: 95, Ataque: 7, Defesa: 1";
+
+            robo.Atacar(robo1);
+            string atual = robo1.ToString();
+
+            Assert.AreEqual(esperado, atual);
+        }
+
+        [TestMethod]
+        public void RushAtacaMegaman()
+        {
+            var rush = new Rush();
+            var mega = new Megaman();
+            rush.Atacar(mega);
+            Assert.AreEqual(mega.Vida, 100);
+        }
     }
 }
