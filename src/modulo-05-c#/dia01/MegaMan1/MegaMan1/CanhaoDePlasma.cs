@@ -23,13 +23,5 @@ namespace MegaMan1
                 return 0;
             }
         }
-
-        public string Tipo
-        {
-            get
-            {
-                return "UpgradeAtk";
-            }
-        }
     }
 }

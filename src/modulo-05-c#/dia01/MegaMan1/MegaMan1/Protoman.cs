@@ -11,40 +11,26 @@ namespace MegaMan1
         bool Morreu = false;
         public Protoman() : base()
         {
-
+            Defesa = 2;
         }
 
         public Protoman(Chip chip) : base(chip)
         {
-
+            Defesa = 2;
         }
 
-        protected override int Ataque
-        {
-            get
-            {
-                if (Morreu)
-                {
-                    return 7 + BonusAtk + AtaqueChipAtual;
-                }
-                return base.Ataque;
-            }
-        }
+        protected override int Ataque { get; set; }
 
-        protected override int Defesa
-        {
-            get
-            {
-                return 2 + BonusDef + DefesaChipAtual;
-            }
-        }
+        protected override int Defesa { get; set; }
 
         public override void ReceberAtaque(int ataque)
         {
             base.ReceberAtaque(ataque);
+
             if (this.Vida <= 0 && Morreu == false)
             {
                 this.Vida = 20;
+                this.Ataque = 7;
                 this.Morreu = true;
             }
         }

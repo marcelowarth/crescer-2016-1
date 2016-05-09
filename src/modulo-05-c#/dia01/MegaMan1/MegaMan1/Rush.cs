@@ -10,73 +10,40 @@ namespace MegaMan1
     {
         public Rush() : base()
         {
-
+            Ataque = 4;
+            Defesa = 3;
         }
 
         public Rush(Chip chip) : base(chip)
         {
-
+            Ataque = 4;
+            Defesa = 3;
         }
 
-        protected int BAtk
+        protected override int MaxUpgrades
+        {
+            get { return 2; }
+        }
+
+        public int BonusAtk
         {
             get
             {
-                return base.BonusAtk;
+                return Ataque + AtaqueChipAtual + BonusAtkUpgrades;
             }
         }
 
-        protected int BDef
+        public int BonusDef
         {
             get
             {
-                return base.BonusDef;
-            }
-        }
-
-        protected override int Ataque
-        {
-            get
-            {
-                return 4 + BAtk;
-            }
-        }
-
-        protected override int Defesa
-        {
-            get
-            {
-                return 3 + BDef;
-            }
-        }
-        
-        public string Tipo
-        {
-            get
-            {
-                return "Lendário";
-            }
-        }
-
-        public override int BonusAtk
-        {
-            get
-            {
-                return Ataque;
-            }
-        }
-
-        public override int BonusDef
-        {
-            get
-            {
-                return Defesa;
+                return Defesa + DefesaChipAtual + BonusDefUpgrades;
             }
         }
 
         public override void ReceberAtaque(int ataque)
         {
-            int dano = ataque - BDef;
+            int dano = ataque - BonusDefUpgrades;
             bool positive = dano >= 0;
             if (positive)
             {
@@ -88,7 +55,7 @@ namespace MegaMan1
         {
             if (!(robo is Megaman))
             {
-                robo.ReceberAtaque(this.Ataque);
+                robo.ReceberAtaque(this.Ataque + this.BonusAtkUpgrades + this.AtaqueChipAtual);
             }
         }
     }

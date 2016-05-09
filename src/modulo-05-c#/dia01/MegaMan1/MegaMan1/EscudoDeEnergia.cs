@@ -23,13 +23,5 @@ namespace MegaMan1
                 return 2;
             }
         }
-
-        public string Tipo
-        {
-            get
-            {
-                return "UpgradeDef";
-            }
-        }
     }
 }

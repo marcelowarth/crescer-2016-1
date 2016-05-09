@@ -10,31 +10,25 @@ namespace MegaMan1
     {
         public Megaman() : base()
         {
-
+            Ataque = 6;
         }
 
         public Megaman(Chip chip) : base(chip)
         {
-
+            Ataque = 6;
         }
 
-        protected override int Ataque
-        {
-            get
-            {
-                return 6 + BonusAtk + AtaqueChipAtual;
-            }
-        }
+        protected override int Ataque { get; set; }
 
         public override void Atacar(Robo robo)
         {
             if (this.Vida < 30)
             {
-                robo.ReceberAtaque(this.Ataque + 3);
+                robo.ReceberAtaque(this.Ataque + 3 + AtaqueChipAtual + BonusAtkUpgrades);
             }
             else
             {
-                robo.ReceberAtaque(this.Ataque);
+                robo.ReceberAtaque(this.Ataque + AtaqueChipAtual + BonusAtkUpgrades);
             }
         }
     }

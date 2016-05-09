@@ -23,13 +23,5 @@ namespace MegaMan1
                 return 1;
             }
         }
-
-        public string Tipo
-        {
-            get
-            {
-                return "Lendário";
-            }
-        }
     }
 }

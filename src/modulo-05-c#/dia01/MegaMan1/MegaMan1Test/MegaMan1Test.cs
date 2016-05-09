@@ -224,7 +224,7 @@ namespace MegaMan1Test
         }
         
         [TestMethod]
-        public void RushEquipaRushEquipadoComDoisCanhoesCausa13Dano()
+        public void RushEquipaRushEquipadoComDoisCanhoesCausa12Dano()
         {
             var rush = new Rush();
             var rushEquip = new Rush();
@@ -234,11 +234,11 @@ namespace MegaMan1Test
             rush.EquiparUpgrade(rushEquip);
             var bot = new Bot();
             rush.Atacar(bot);
-            Assert.AreEqual(bot.Vida, 87);
+            Assert.AreEqual(bot.Vida, 88);
         }
         
         [TestMethod]
-        public void RoboNasceComChipNivel1()
+        public void MegamanNasceComChipNivel1()
         {
             Robo robo = new Megaman(Chip.Nivel1);
             string esperado = "Nome: , Vida: 100, Ataque: 5, Defesa: 0";
@@ -249,7 +249,7 @@ namespace MegaMan1Test
         }
 
         [TestMethod]
-        public void RoboNasceComChipNivel2()
+        public void RushNasceComChipNivel2()
         {
             Robo robo = new Rush(Chip.Nivel2);
             string esperado = "Nome: , Vida: 100, Ataque: 4, Defesa: 3";
@@ -260,7 +260,7 @@ namespace MegaMan1Test
         }
 
         [TestMethod]
-        public void RoboNasceComChipNivel3()
+        public void ProtomanNasceComChipNivel3()
         {
             Robo robo = new Protoman(Chip.Nivel3);
             string esperado = "Nome: , Vida: 100, Ataque: 7, Defesa: 3";

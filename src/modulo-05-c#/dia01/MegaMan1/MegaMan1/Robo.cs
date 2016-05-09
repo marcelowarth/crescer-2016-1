@@ -9,19 +9,24 @@ namespace MegaMan1
     public class Robo
     {
         List<IUpgrade> upgrades = new List<IUpgrade>();
-        public virtual int BonusAtk { get; set; }
-        public virtual int BonusDef { get; set; }
+        public virtual int BonusAtkUpgrades { get; set; }
+        public virtual int BonusDefUpgrades { get; set; }
         private Chip ChipAtual;
 
         public Robo()
         {
             Vida = 100;
             ChipAtual = Chip.Nivel2;
+            Ataque = 5;
+            Defesa = 0;
         }
 
-        public Robo(Chip chip) : this()
+        public Robo(Chip chip)
         {
+            Vida = 100;
             ChipAtual = chip;
+            Ataque = 5;
+            Defesa = 0;
         }
 
         public int AtaqueChipAtual
@@ -61,30 +66,18 @@ namespace MegaMan1
             get { return 3; }
         }
 
-        protected virtual int Ataque
-        {
-            get
-            {
-                return 5 + BonusAtk + AtaqueChipAtual;
-            }
-        }
+        protected virtual int Ataque { get; set; }
 
-        protected virtual int Defesa
-        {
-            get
-            {
-                return 0 + BonusDef + DefesaChipAtual;
-            }
-        }
+        protected virtual int Defesa { get; set; }
 
         public virtual void Atacar(Robo robo)
         {
-            robo.ReceberAtaque(this.Ataque);
+            robo.ReceberAtaque(this.Ataque + this.BonusAtkUpgrades + this.AtaqueChipAtual);
         }
 
         public virtual void ReceberAtaque(int ataque)
         {
-            int dano = ataque - this.Defesa;
+            int dano = ataque - (this.Defesa + this.BonusDefUpgrades + this.DefesaChipAtual);
             bool positive = dano >= 0;
             if(positive)
             {
@@ -96,8 +89,8 @@ namespace MegaMan1
         {
             return ("Nome: " + "" 
                 + ", Vida: " + this.Vida
-                + ", Ataque: " + this.Ataque
-                + ", Defesa: " + this.Defesa);
+                + ", Ataque: " + (this.Ataque + this.BonusAtkUpgrades + this.AtaqueChipAtual)
+                + ", Defesa: " + (this.Defesa + this.BonusDefUpgrades + this.DefesaChipAtual));
         }
 
         public virtual void EquiparUpgrade(IUpgrade upgrade)
@@ -105,8 +98,8 @@ namespace MegaMan1
             if (upgrades.Count < this.MaxUpgrades)
             {
                 upgrades.Add(upgrade);
-                BonusAtk += upgrade.BonusAtk;
-                BonusDef += upgrade.BonusDef;
+                this.BonusAtkUpgrades += upgrade.BonusAtk;
+                this.BonusDefUpgrades += upgrade.BonusDef;
             }
         }
     }

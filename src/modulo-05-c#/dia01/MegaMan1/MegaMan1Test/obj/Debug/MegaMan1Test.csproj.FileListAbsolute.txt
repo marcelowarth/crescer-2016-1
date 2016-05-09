@@ -6,3 +6,11 @@ D:\Git\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1Test\obj\Debug\Meg
 D:\Git\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1Test\obj\Debug\MegaMan1Test.pdb
 D:\Git\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1Test\bin\Debug\MegaMan1.exe
 D:\Git\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1Test\bin\Debug\MegaMan1.pdb
+C:\Users\marcelo.moura\Desktop\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1Test\bin\Debug\MegaMan1Test.dll
+C:\Users\marcelo.moura\Desktop\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1Test\bin\Debug\MegaMan1Test.pdb
+C:\Users\marcelo.moura\Desktop\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1Test\bin\Debug\MegaMan1.exe
+C:\Users\marcelo.moura\Desktop\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\marcelo.moura\Desktop\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1Test\bin\Debug\MegaMan1.pdb
+C:\Users\marcelo.moura\Desktop\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1Test\obj\Debug\MegaMan1Test.csprojResolveAssemblyReference.cache
+C:\Users\marcelo.moura\Desktop\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1Test\obj\Debug\MegaMan1Test.dll
+C:\Users\marcelo.moura\Desktop\crescer-2016-1\src\modulo-05-c#\dia01\MegaMan1\MegaMan1Test\obj\Debug\MegaMan1Test.pdb
