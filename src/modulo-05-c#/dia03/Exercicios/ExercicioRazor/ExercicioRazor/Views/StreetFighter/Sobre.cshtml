@@ -1,0 +1,19 @@
+﻿@model SobreMimModel
+
+@{
+    ViewBag.Title = "Sobre";
+    Layout = "~/Views/Shared/_LayoutWikiStreetFighter.cshtml";
+}
+
+<div id="div-info-middle">
+    <h2>Desenvolvedor</h2>
+    <img class="img-float-left" src="~/Content/Imagens/eu.jpg" alt="Descrição a ser exibida caso a imagem nao seja carregada">
+    <p>
+        <strong>Nome:</strong> @Model.Nome <br>
+        <strong>Nascimento:</strong> @Model.Nascimento <br>
+        <strong>Contato:</strong> @Model.Contato <br>
+        <strong>Escolaridade:</strong> @Model.Escolaridade <br>
+        <strong>Instituição de Ensino:</strong> @Model.InstituicaoEnsino <br>
+        <strong>Semestre:</strong> @Model.Semestre <br>
+    </p>
+</div>
