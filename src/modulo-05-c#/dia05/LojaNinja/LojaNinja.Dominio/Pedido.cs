@@ -1,5 +1,7 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,14 +49,33 @@ namespace LojaNinja.Dominio
         }
 
         public int Id { get; private set; }
+
+        [DisplayName("Data do Pedido")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DataPedido { get; private set; }
+
+        [DisplayName("Data de Entrega")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DataEntregaDesejada { get; private set; }
+        
+        [DisplayName("Nome do Produto")]
         public string NomeProduto { get; private set; }
+
+        [DisplayName("Valor")]
+        [DisplayFormat(DataFormatString = "{0:c}", ApplyFormatInEditMode = true)]
         public decimal Valor { get; private set; }
+
+        [DisplayName("Tipo de Pagamento")]
         public TipoPagamento TipoPagamento { get; private set; }
+
+        [DisplayName("Nome do Cliente")]
         public string NomeCliente { get; private set; }
+        
         public string Cidade { get; private set; }
+        
         public string Estado { get; private set; }
+
+        [DisplayName("Urgente?")]
         public bool PedidoUrgente { get; private set; }
 
         private void ValidaPossibilidadeEntrega(double diasRestantesParaConcluirEntrega)

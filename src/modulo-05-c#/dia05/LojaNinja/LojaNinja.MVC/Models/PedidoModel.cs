@@ -14,7 +14,7 @@ namespace LojaNinja.MVC.Models
 
         [Required(ErrorMessage = "Data de Entrega deve ser informada")]
         [DisplayName("Data de Entrega")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DataEntrega { get; set; }
 
         [Required(ErrorMessage = "Nome do Produto deve ser informado")]
@@ -27,11 +27,8 @@ namespace LojaNinja.MVC.Models
         public Decimal Valor { get; set; }
 
         [Required]
-        public TipoPagamento TipoPagamento { get; set; }
-
-        [Required]
         [DisplayName("Tipo de Pagamento")]
-        public TipoPagamento TipoDePagamento { get; set; }
+        public TipoPagamento TipoPagamento { get; set; }
 
         [Required(ErrorMessage = "Nome do Cliente deve ser informado")]
         [DisplayName("Nome do Cliente")]
