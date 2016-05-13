@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<header id="nav-top">
+    <div id="logo">
+        <img src="~/Content/Imagens/logoCameloNinja.png" alt="logo" width="300px" />
+    </div>
+</header>
+<body>
+    <div id="main">
+        <div id="box">
+            @RenderBody()
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    @RenderSection("scripts", false)
+</body>
+</html>
