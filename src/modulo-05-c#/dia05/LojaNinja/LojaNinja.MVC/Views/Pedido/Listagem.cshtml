@@ -7,7 +7,9 @@
 <h2>Listagem</h2>
 
 <p>
-    @Html.ActionLink("Cadastrar", "Cadastrar")
+    <a href="@Url.Action("Manter", "Pedido")">
+        <button type="submit" class="btn btn-default"> Cadastrar </button>
+    </a>
 </p>
 <table class="table">
     <tr>
@@ -32,9 +34,6 @@
         <th>
             @Html.DisplayNameFor(model => model.Estado)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PedidoUrgente)
-        </th>
         <th></th>
     </tr>
 
@@ -44,7 +43,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.DataPedido)
             </td>
-            <td>
+            <td @Html.Raw(item.PedidoUrgente ? "class='urgente'" : "")>
                 @Html.DisplayFor(modelItem => item.DataEntregaDesejada)
             </td>
             <td>
@@ -63,12 +62,18 @@
                 @Html.DisplayFor(modelItem => item.Estado)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PedidoUrgente)
-            </td>
-            <td>
-                @Html.ActionLink("Editar", "Manter", new { id = item.Id }) |
-                @Html.ActionLink("Detalhes", "Detalhes", new { id = item.Id }) |
-                @Html.ActionLink("Excluir", "Remover", new { id = item.Id })
+                <a href="@Url.Action("Manter", new { id = item.Id })">
+                    <i class="glyphicon glyphicon-pencil"></i>
+                    <span class="sr-only">Editar</span>
+                </a> |
+                <a href="@Url.Action("Detalhes", new { id = item.Id })">
+                    <i class="glyphicon glyphicon-list"></i>
+                    <span class="sr-only">Detalhes</span>
+                </a> |
+                <a href="@Url.Action("Remover", new { id = item.Id })">
+                    <i class="glyphicon glyphicon-remove"></i>
+                    <span class="sr-only">Excluir</span>
+                </a>
             </td>
         </tr>
     }
