@@ -1,5 +1,8 @@
-﻿Número Pedido;Data Pedido;Data Desejo Entrega;Nome Produto;Valor Venda;Tipo Pagamento;Nome Cliente;Cidade;Estado;Urgente
-1;01/02/2009 06:17:15;01/02/2009 06:17;Kunai;1200;Mastercard;carolina;Basildon;England;true
-2;01/02/2009 04:53;01/02/2009 04:53;Kunai;1200;Visa;Betina;Parkville                   ;MO;true
-3;01/02/2009 13:08;01/02/2009 13:08;Shuriken;1200;Mastercard;Federica e Andrea;Astoria                     ;OR;true
-4;13/05/2016 23:16;10/10/2016 00:00;Teste1;100,50;0;Abra;SL;RS;False
+Número Pedido;Data Pedido;Data Desejo Entrega;Nome Produto;Valor Venda;Tipo Pagamento;Nome Cliente;Cidade;Estado;Urgente
+
+1;01/02/2009 06:17;01/02/2009 06:17;Kunai;1200;Mastercard;carolina;Basildon;England;True
+2;01/02/2009 04:53;01/02/2009 04:53;Kunai;1200;Visa;Betina;Parkville                   ;MO;True
+3;01/02/2009 13:08;01/02/2009 13:08;Shuriken;1200;Mastercard;Federica e Andrea;Astoria                     ;OR;True
+4;01/03/2009 14:44;01/03/2009 14:44;Kunai;1200;Visa;Gouya;Echuca;Victoria;True
+5;01/04/2009 20:11;01/04/2009 20:11;Shuriken;1200;Mastercard;Fleur;Peoria                      ;IL;True
+6;01/02/2009 20:09;01/02/2009 20:09;Shuriken;1200;Mastercard;adam;Martin                      ;TN;True

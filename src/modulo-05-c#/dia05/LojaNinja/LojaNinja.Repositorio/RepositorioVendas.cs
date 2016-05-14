@@ -10,7 +10,8 @@ namespace LojaNinja.Repositorio
 {
     public class RepositorioVendas
     {
-        private const string PATH_ARQUIVO = @"D:\Git\crescer-2016-1\src\modulo-05-c#\dia05\LojaNinja\Vendas.txt";
+        //private const string PATH_ARQUIVO = @"D:\Git\crescer-2016-1\src\modulo-05-c#\dia05\LojaNinja\Vendas.txt";
+        private const string PATH_ARQUIVO = @"C:\Git\crescer-2016-1\src\modulo-05-c#\dia05\LojaNinja\Vendas.txt";
         //private const string PATH_ARQUIVO = @"C:\Users\marcelo.moura\Desktop\crescer-2016-1\src\modulo-05-c#\dia05\LojaNinja\Vendas.txt";
 
         
@@ -30,16 +31,37 @@ namespace LojaNinja.Repositorio
 
         public void IncluirPedido(Pedido pedido)
         {
-            lock (objetoLock)
+            var thislock = new Object();
+            var idGerado = ObterUltimoID() + 1;
+            try
             {
-                var utlimoId = this.ObterPedidos().Max(x => x.Id);
-                var idGerado = utlimoId + 1;
-                var novaLinha = ConvertePedidoEmLinhaCSV(pedido, idGerado);
-
-                File.AppendAllText(PATH_ARQUIVO, novaLinha);
-
                 pedido.AtualizarId(idGerado);
             }
+            catch (InvalidOperationException ex)
+            { }
+            finally
+            {
+                lock (objetoLock)
+                {
+                    //var utlimoId = this.ObterPedidos().Max(x => x.Id);
+                    var novaLinha = ConvertePedidoEmLinhaCSV(pedido, idGerado);
+
+                    File.AppendAllText(PATH_ARQUIVO, novaLinha);
+
+                }
+            }
+        }
+
+        private int ObterUltimoID()
+        {
+            var ultimoId = 0;
+
+            if (ObterPedidos().Count() != 0)
+            {
+                ultimoId = ObterPedidos().Max(x => x.Id);
+            }
+
+            return ultimoId;
         }
 
         private string ConvertePedidoEmLinhaCSV(Pedido pedido, int proximoId)
@@ -64,7 +86,15 @@ namespace LojaNinja.Repositorio
 
         public void ExcluirPedido(int id)
         {
-            //TODO: Implementar
+            var pedidos = ObterPedidos();
+            var resto = pedidos.Where(x => x.Id != id).ToList();
+            var primeiraLinha = File.ReadLines(PATH_ARQUIVO).First();
+            File.WriteAllText(PATH_ARQUIVO, string.Empty);
+            File.AppendAllText(PATH_ARQUIVO, primeiraLinha + Environment.NewLine);
+            foreach (var linha in resto)
+            {
+                IncluirPedido(linha);
+            }
         }
 
         private List<Pedido> ConverteLinhasEmPedidos(List<string> linhasArquivo)
@@ -76,6 +106,10 @@ namespace LojaNinja.Repositorio
 
             foreach (var linha in linhasArquivo)
             {
+                if(linha == "")
+                {
+                    continue;
+                }
                 var id = Convert.ToInt32(linha.Split(';')[0]);
                 var dataPedido = Convert.ToDateTime(linha.Split(';')[1]);
                 var dataEntregaDesejada = Convert.ToDateTime(linha.Split(';')[2]);
@@ -93,6 +127,28 @@ namespace LojaNinja.Repositorio
             }
 
             return listaPedidos;
+        } 
+
+        public List<Pedido> ObterPedidoFiltradoCliente(string cliente)
+        {
+            var pedidosCli = ObterPedidos().Where(x => x.NomeCliente.ToLower() == cliente.ToLower()).ToList();
+            
+            return pedidosCli;
+        }
+
+        public List<Pedido> ObterPedidoFiltradoProduto(string produto)
+        {
+            var pedidosProd = ObterPedidos().Where(x => x.NomeProduto.ToLower() == produto.ToLower()).ToList();
+
+            return pedidosProd;
+        }
+
+
+        public List<Pedido> ObterPedidoFiltradoClienteProduto(string cliente, string produto)
+        {
+            var pedidos = ObterPedidoFiltradoProduto(produto).Where(x => x.NomeCliente == cliente).ToList();
+
+            return pedidos;
         }
     }
 }

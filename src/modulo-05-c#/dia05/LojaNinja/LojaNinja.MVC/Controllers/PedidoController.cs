@@ -71,18 +71,35 @@ namespace LojaNinja.MVC.Controllers
 
         public ActionResult Listagem(string cliente, string produto)
         {
-            var pedidos = repositorio.ObterPedidos();
+            if(String.IsNullOrWhiteSpace(cliente) && String.IsNullOrWhiteSpace(produto))
+            {
+                var pedidos = repositorio.ObterPedidos();
+                return View(pedidos);
+            }
+            else if (String.IsNullOrWhiteSpace(cliente))
+            {
+                var pedidos = repositorio.ObterPedidoFiltradoProduto(produto);
+                return View(pedidos);
+            }
+            else if(String.IsNullOrWhiteSpace(produto))
+            {
+                var pedidos = repositorio.ObterPedidoFiltradoCliente(cliente);
+                return View(pedidos);
+            }
+            else
+            {
+                var pedidos = repositorio.ObterPedidoFiltradoClienteProduto(cliente, produto);
+                return View(pedidos);
+            }
 
-            return View(pedidos);
         }
 
         public ActionResult Excluir(int id)
         {
             repositorio.ExcluirPedido(id);
+            var pedidos = repositorio.ObterPedidos();
 
-            ViewBag.Mensagem = "Pedido excluído!";
-
-            return View("Mensagem");
+            return View("Listagem", pedidos);
         }
     }
 }
