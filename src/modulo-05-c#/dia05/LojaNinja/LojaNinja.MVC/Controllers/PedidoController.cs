@@ -38,20 +38,19 @@ namespace LojaNinja.MVC.Controllers
 
         public ActionResult Salvar(PedidoModel model)
         {
-            //if (model.Estado == "RS" && model.Cidade == "SL")
-            //    ModelState.AddModelError("", "Cidade e Estado inválidos");
-
             if (ModelState.IsValid)
-            {
                 try
                 {
-                    var pedido = new Pedido(model.DataEntrega, model.NomeProduto, model.Valor, model.TipoPagamento, model.NomeCliente, model.Cidade, model.Estado);
-
-                    //if (model.Id.HasValue)
-                    //    repositorio.AtualizarPedido(pedido);
-                    //else
-                        repositorio.IncluirPedido(pedido);
-
+                    var pedido = new Pedido(
+                    model.DataEntrega,
+                    model.NomeProduto,
+                    model.Valor,
+                    model.TipoPagamento,
+                    model.NomeCliente,
+                    model.Cidade,
+                    model.Estado
+                    );
+                    repositorio.IncluirPedido(pedido);
                     ViewBag.MensagemSucesso = "Pedido salvo com sucesso!";
                     return View("Detalhes", pedido);
                 }
@@ -59,7 +58,6 @@ namespace LojaNinja.MVC.Controllers
                 {
                     ModelState.AddModelError("", ex.Message);
                 }
-            }
 
             return View("Manter", model);
         }
