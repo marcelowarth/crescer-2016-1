@@ -112,3 +112,15 @@ UPDATE NO ACTION
 GO
 
 
+insert into Permisoes (permissao) values ('admin');
+insert into Permisoes (permissao) values ('comum');
+
+insert into Usuario (nome_usuario, email_usuario, senha_usuario) values ('admin', 'admin@admin.com', 'd4ce3a95a07dc7a98983adbe3d4c0af0'); -- aDm1n
+insert into Usuario (nome_usuario, email_usuario, senha_usuario) values ('comum', 'comum@comum.com', '9f8c8017d55b36bfe68bc6fdbfa248f8'); -- c0Mum
+
+insert into Usuarios_Permissoes (id_usuario, id_usuario_permissao) values (1, 1);
+insert into Usuarios_Permissoes (id_usuario, id_usuario_permissao) values (1, 2);
+insert into Usuarios_Permissoes (id_usuario, id_usuario_permissao) values (2, 2);
+
+insert into Produtos (dataPedido, dataEntrega, nomeProduto, tipoPagamento, cidade, estado, cliente, urgente, valor) 
+	values (getDate(), getDate(), 'Kunai', 'VISA', 'SL', 'RS', 'Nunes', 1, 1200.50);
