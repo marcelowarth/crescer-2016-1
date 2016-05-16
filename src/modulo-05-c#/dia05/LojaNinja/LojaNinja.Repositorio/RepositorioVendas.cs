@@ -11,8 +11,8 @@ namespace LojaNinja.Repositorio
     public class RepositorioVendas
     {
         //private const string PATH_ARQUIVO = @"D:\Git\crescer-2016-1\src\modulo-05-c#\dia05\LojaNinja\Vendas.txt";
-        private const string PATH_ARQUIVO = @"C:\Git\crescer-2016-1\src\modulo-05-c#\dia05\LojaNinja\Vendas.txt";
-        //private const string PATH_ARQUIVO = @"C:\Users\marcelo.moura\Desktop\crescer-2016-1\src\modulo-05-c#\dia05\LojaNinja\Vendas.txt";
+        //private const string PATH_ARQUIVO = @"C:\Git\crescer-2016-1\src\modulo-05-c#\dia05\LojaNinja\Vendas.txt";
+        private const string PATH_ARQUIVO = @"C:\Users\marcelo.moura\Desktop\crescer-2016-1\src\modulo-05-c#\dia05\LojaNinja\Vendas.txt";
 
         
         private static readonly object objetoLock = new object();
@@ -90,7 +90,7 @@ namespace LojaNinja.Repositorio
             var resto = pedidos.Where(x => x.Id != id).ToList();
             var primeiraLinha = File.ReadLines(PATH_ARQUIVO).First();
             File.WriteAllText(PATH_ARQUIVO, string.Empty);
-            File.AppendAllText(PATH_ARQUIVO, primeiraLinha + Environment.NewLine);
+            File.AppendAllText(PATH_ARQUIVO, primeiraLinha);
             foreach (var linha in resto)
             {
                 IncluirPedido(linha);
@@ -106,10 +106,6 @@ namespace LojaNinja.Repositorio
 
             foreach (var linha in linhasArquivo)
             {
-                if(linha == "")
-                {
-                    continue;
-                }
                 var id = Convert.ToInt32(linha.Split(';')[0]);
                 var dataPedido = Convert.ToDateTime(linha.Split(';')[1]);
                 var dataEntregaDesejada = Convert.ToDateTime(linha.Split(';')[2]);
