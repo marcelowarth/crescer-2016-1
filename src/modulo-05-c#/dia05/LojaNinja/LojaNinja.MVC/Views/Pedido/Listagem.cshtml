@@ -2,9 +2,11 @@
 
 @{
     ViewBag.Title = "Listagem";
+    Layout = "~/Views/Shared/_LayoutLogado.cshtml";
 }
 
-<h2>Listagem</h2>
+@Html.AntiForgeryToken()
+<h2>Listagem de Pedidos</h2>
 
 <p>
     <a href="@Url.Action("Manter", "Pedido")">

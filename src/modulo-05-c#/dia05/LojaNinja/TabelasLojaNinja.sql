@@ -1,12 +1,12 @@
 CREATE
-  TABLE Permisoes
+  TABLE Permissoes
   (
     id_permissao INTEGER IDENTITY NOT NULL ,
     permissao    VARCHAR (50) NOT NULL
   )
   ON "default"
 GO
-ALTER TABLE Permisoes ADD CONSTRAINT Permisoes_PK PRIMARY KEY CLUSTERED (
+ALTER TABLE Permissoes ADD CONSTRAINT Permisoes_PK PRIMARY KEY CLUSTERED (
 id_permissao)
 WITH
   (
@@ -86,7 +86,7 @@ ADD CONSTRAINT FK_Permissoes FOREIGN KEY
 (
 id_permissao
 )
-REFERENCES Permisoes
+REFERENCES Permissoes
 (
 id_permissao
 )
@@ -111,9 +111,8 @@ DELETE
 UPDATE NO ACTION
 GO
 
-
-insert into Permisoes (permissao) values ('admin');
-insert into Permisoes (permissao) values ('comum');
+insert into Permissoes (permissao) values ('admin');
+insert into Permissoes (permissao) values ('comum');
 
 insert into Usuarios (nome_usuario, email_usuario, senha_usuario) values ('admin', 'admin@admin.com', 'd4ce3a95a07dc7a98983adbe3d4c0af0'); -- aDm1n
 insert into Usuarios (nome_usuario, email_usuario, senha_usuario) values ('comum', 'comum@comum.com', '9f8c8017d55b36bfe68bc6fdbfa248f8'); -- c0Mum

@@ -11,13 +11,14 @@ namespace LojaNinja.MVC.Models
     {
         [Required]
         [DisplayName("E-mail")]
-        [StringLength(100)]
+        [StringLength(50)]
         [EmailAddress]
         public string Email { get; set; }
 
         [Required]
         [DisplayName("Senha")]
-        [StringLength(100)]
+        [StringLength(50)]
+        [DataType(DataType.Password)]
         public string Senha { get; set; }
     }
 }

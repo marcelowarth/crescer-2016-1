@@ -1,0 +1,42 @@
+﻿@model IEnumerable<LojaNinja.Dominio.Usuario>
+
+@{
+    ViewBag.Title = "Listagem de Usuarios";
+    Layout = "~/Views/Shared/_LayoutLogado.cshtml";
+}
+
+<h2>Listagem de Usuários</h2>
+
+<p>
+    <a href="@Url.Action("CadastroUsuario", "Login")">
+        <button type="submit" class="btn btn-default"> Cadastrar </button>
+    </a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Senha)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Senha)
+        </td>
+    </tr>
+}
+
+</table>

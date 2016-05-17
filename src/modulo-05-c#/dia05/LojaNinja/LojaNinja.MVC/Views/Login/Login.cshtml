@@ -4,22 +4,41 @@
     ViewBag.Title = "Login";
 }
 
-@using (Html.BeginForm("Entrar", "Login", FormMethod.Post, new { @class = "form" }))
+@section scripts {
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}
+<h2>Login</h2>
+
+@using(Html.BeginForm("Entrar", "Login", FormMethod.Post, new { @class = "form" }))
 {
-    <!-- Este carinha aqui que gera o token de segurança do form. -->
     @Html.AntiForgeryToken()
-    <div>
-        @Html.ValidationSummary(excludePropertyErrors: false)
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email) <br />
-        @Html.TextBoxFor(m => m.Email)
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Senha) <br />
-        @Html.PasswordFor(m => m.Senha)
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Entrar" />
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <a href="~/Login/CadastroUsuario" class="btn btn-default col-md-offset-2 col-md-1">Cadastrar</a>
+            <div class="col-md-1">
+                <input type="submit" value="Entrar" class="btn btn-default" />
+            </div>
+        </div>
     </div>
 }

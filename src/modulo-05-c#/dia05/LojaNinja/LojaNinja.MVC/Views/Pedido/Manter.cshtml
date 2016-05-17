@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Cadastrar";
+    Layout = "~/Views/Shared/_LayoutLogado.cshtml";
 }
 
 @section scripts {
@@ -10,6 +11,7 @@
     <script src="~/Scripts/Custom/overrides-validacao.js"></script>
 }
 
+@Html.AntiForgeryToken()
 @using (Html.BeginForm("Salvar", "Pedido", FormMethod.Post))
 {
     <div class="form-horizontal">

@@ -5,6 +5,8 @@ using LojaNinja.Repositorio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
@@ -12,17 +14,11 @@ namespace LojaNinja.MVC.Controllers
 {
     public class LoginController : Controller
     {
-        // Iremos utilizar o serviço de usuários.
         private UsuarioServico _usuarioServico;
+        private UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio();
 
         public LoginController()
         {
-            // O serviço de usuário sabe que precisamos de alguém que persista usuário, alguém que implementa
-            // as regras dessa persistência, afinal, o Método BuscarUsuarioPorAutenticacao do serviço utiliza
-            // o repositório, concorda?
-            // Bem, no domínio, só temos as regras de persistência, não a implementação.
-            // Aqui na camada WEB, onde tudo se junta, podemos definir quem vai ter o papel do que.
-            // Neste caso, definimos que a regra de persistência de usuário será realizada pela classe UsuarioRepositorio.
             _usuarioServico = new UsuarioServico(
                     new UsuarioRepositorio()
                 );
@@ -39,7 +35,6 @@ namespace LojaNinja.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Buscamos o usuário de nosso "Banco de Dados" por seu login e senha.
                 Usuario usuarioEncontrado =
                     _usuarioServico.BuscarUsuarioPorAutenticacao(
                             loginViewModel.Email, loginViewModel.Senha
@@ -47,14 +42,8 @@ namespace LojaNinja.MVC.Controllers
 
                 if (usuarioEncontrado != null)
                 {
-                    // É sempre bom criar uma Model só para o usuário logado.
-                    // Digamos que você queira utilizar somente a classe Usuário para isso,
-                    // então se quisesse guardar coisas que são da sessão e não da classe usuário, como faria?
-                    // mudaria a classe Usuario? Não, porque não é de sua responsabilidade os dados de sessão.
-                    // mas uma view model pode ser mais flexivel.
                     var usuarioLogadoModel = new UsuarioLogadoModel(usuarioEncontrado);
 
-                    // Encapsulamos aqui a regra para criar a sessão.
                     ServicoDeSessao.CriarSessao(usuarioLogadoModel);
                     return RedirectToAction("Listagem", "Pedido");
                 }
@@ -65,6 +54,65 @@ namespace LojaNinja.MVC.Controllers
             }
 
             return View("Login", loginViewModel);
+        }
+
+        public ActionResult CadastroUsuario()
+        {
+            return View();
+        }
+
+        public ActionResult Salvar(UsuarioCadastroModel model)
+        {
+            string senhaCriptografada = Criptografar(model.Senha);
+
+            if (ModelState.IsValid)
+                try
+                {
+                    var user = new Usuario();
+                    user.Nome = model.Nome;
+                    user.Email = model.Email;
+                    user.Senha = senhaCriptografada;
+
+                    usuarioRepositorio.IncluirUsuario(user);
+                    ViewBag.MensagemSucesso = "Usuário salvo com sucesso!";
+                    return View("Login");
+                    //return View("Detalhes", user);
+                }
+                catch (ArgumentException ex)
+                {
+                    ModelState.AddModelError("", ex.Message);
+                }
+
+            return View("Manter", model);
+        }
+
+        [HttpGet]
+        public ActionResult Sair()
+        {
+            ServicoDeSessao.Deslogar();
+            return View("Login");
+        }
+
+        public ActionResult ListagemUsuarios()
+        {
+            var usuarios = usuarioRepositorio.ObterUsuarios();
+            return View(usuarios);
+        }
+
+        private string Criptografar(string texto)
+        {
+            using (MD5 md5Hash = MD5.Create())
+            {
+                byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(texto));
+                StringBuilder sBuilder = new StringBuilder();
+
+                for (int i = 0; i < data.Length; i++)
+                {
+                    sBuilder.Append(data[i].ToString("x2"));
+                }
+
+                return sBuilder.ToString();
+            }
         }
     }
 }

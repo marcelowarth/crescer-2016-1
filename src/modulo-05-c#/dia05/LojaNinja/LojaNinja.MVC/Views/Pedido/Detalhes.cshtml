@@ -2,14 +2,15 @@
 
 @{
     ViewBag.Title = "Detalhes";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutLogado.cshtml";
 }
 
 @if (@ViewBag.MensagemSucesso != null)
 {
     <h3 class="alert alert-success">@ViewBag.MensagemSucesso</h3>
 }
-
+<!-- Este carinha aqui que gera o token de segurança do form. -->
+@Html.AntiForgeryToken()
 <div>
     <h1>Detalhes</h1>
     <hr />
