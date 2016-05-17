@@ -56,7 +56,7 @@ namespace LojaNinja.Repositorio
 
         public Usuario BuscarUsuarioPorAutenticacao(string email, string senha)
         {
-            var user = new Usuario();
+            Usuario user = null;
 
             using (TransactionScope scope = new TransactionScope())
             {
@@ -76,6 +76,7 @@ namespace LojaNinja.Repositorio
 
                         if (leitor.Read())
                         {
+                            user = new Usuario();
                             user.Nome = leitor["nome_usuario"].ToString();
                             user.Senha = leitor["senha_usuario"].ToString();
                             user.Email = leitor["email_usuario"].ToString();
@@ -149,7 +150,6 @@ namespace LojaNinja.Repositorio
 
                         scope.Complete();
                         
-                        //TODO: implementar permissao de usuario novo
                     }
                     catch (Exception)
                     {
