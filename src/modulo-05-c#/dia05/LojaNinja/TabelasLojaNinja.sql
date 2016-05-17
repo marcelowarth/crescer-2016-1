@@ -17,14 +17,14 @@ WITH
 GO
 
 CREATE
-  TABLE Produtos
+  TABLE Pedidos
   (
-    id_produto    INTEGER IDENTITY NOT NULL ,
-    nomeProduto   VARCHAR NOT NULL ,
+    id_pedido    INTEGER IDENTITY NOT NULL ,
+    nomeProduto   VARCHAR (50) NOT NULL ,
     dataPedido    DATETIME NOT NULL ,
     dataEntrega   DATETIME NOT NULL ,
     valor         DECIMAL (10,2) NOT NULL ,
-    tipoPagamento VARCHAR (50) NOT NULL ,
+    tipoPagamento INTEGER NOT NULL ,
     cliente       VARCHAR (50) NOT NULL ,
     cidade        VARCHAR (50) NOT NULL ,
     estado        VARCHAR (50) NOT NULL ,
@@ -32,8 +32,8 @@ CREATE
   )
   ON "default"
 GO
-ALTER TABLE Produtos ADD CONSTRAINT Produtos_PK PRIMARY KEY CLUSTERED (
-id_produto)
+ALTER TABLE Pedidos ADD CONSTRAINT Pedido_PK PRIMARY KEY CLUSTERED (
+id_pedido)
 WITH
   (
     ALLOW_PAGE_LOCKS = ON ,
@@ -43,7 +43,7 @@ WITH
 GO
 
 CREATE
-  TABLE Usuario
+  TABLE Usuarios
   (
     id_usuario    INTEGER IDENTITY NOT NULL ,
     nome_usuario  VARCHAR (50) NOT NULL ,
@@ -52,7 +52,7 @@ CREATE
   )
   ON "default"
 GO
-ALTER TABLE Usuario ADD CONSTRAINT Usuario_PK PRIMARY KEY CLUSTERED (id_usuario
+ALTER TABLE Usuarios ADD CONSTRAINT Usuario_PK PRIMARY KEY CLUSTERED (id_usuario
 )
 WITH
   (
@@ -101,7 +101,7 @@ ADD CONSTRAINT FK_Usuario FOREIGN KEY
 (
 id_usuario
 )
-REFERENCES Usuario
+REFERENCES Usuarios
 (
 id_usuario
 )
@@ -115,12 +115,23 @@ GO
 insert into Permisoes (permissao) values ('admin');
 insert into Permisoes (permissao) values ('comum');
 
-insert into Usuario (nome_usuario, email_usuario, senha_usuario) values ('admin', 'admin@admin.com', 'd4ce3a95a07dc7a98983adbe3d4c0af0'); -- aDm1n
-insert into Usuario (nome_usuario, email_usuario, senha_usuario) values ('comum', 'comum@comum.com', '9f8c8017d55b36bfe68bc6fdbfa248f8'); -- c0Mum
+insert into Usuarios (nome_usuario, email_usuario, senha_usuario) values ('admin', 'admin@admin.com', 'd4ce3a95a07dc7a98983adbe3d4c0af0'); -- aDm1n
+insert into Usuarios (nome_usuario, email_usuario, senha_usuario) values ('comum', 'comum@comum.com', '9f8c8017d55b36bfe68bc6fdbfa248f8'); -- c0Mum
 
-insert into Usuarios_Permissoes (id_usuario, id_usuario_permissao) values (1, 1);
-insert into Usuarios_Permissoes (id_usuario, id_usuario_permissao) values (1, 2);
-insert into Usuarios_Permissoes (id_usuario, id_usuario_permissao) values (2, 2);
+SET IDENTITY_INSERT Usuarios_Permissoes OFF
 
-insert into Produtos (dataPedido, dataEntrega, nomeProduto, tipoPagamento, cidade, estado, cliente, urgente, valor) 
-	values (getDate(), getDate(), 'Kunai', 'VISA', 'SL', 'RS', 'Nunes', 1, 1200.50);
+insert into Usuarios_Permissoes (id_usuario, id_permissao) values (1, 1);
+insert into Usuarios_Permissoes (id_usuario, id_permissao) values (1, 2);
+insert into Usuarios_Permissoes (id_usuario, id_permissao) values (2, 2);
+
+SET IDENTITY_INSERT Usuarios_Permissoes ON
+
+
+insert into Pedidos (dataPedido, dataEntrega, nomeProduto, tipoPagamento, cidade, estado, cliente, urgente, valor) 
+	values  (getDate(), getDate(), 'Kunai', 3, 'SL', 'RS', 'Nunes', 1, 1200.50);
+	
+insert into Pedidos (dataPedido, dataEntrega, nomeProduto, tipoPagamento, cidade, estado, cliente, urgente, valor) 
+	values (getDate(), getDate(), 'Shuriken', 4, 'SL', 'RS', 'BenHur', 1, 1200.50);
+	
+insert into Pedidos (dataPedido, dataEntrega, nomeProduto, tipoPagamento, cidade, estado, cliente, urgente, valor) 
+	values (getDate(), getDate(), 'Kunai', 3, 'SL', 'RS', 'Nunes', 1, 1200.50);
