@@ -43,6 +43,7 @@ namespace LojaNinja.MVC.Controllers
                 if (usuarioEncontrado != null)
                 {
                     var usuarioLogadoModel = new UsuarioLogadoModel(usuarioEncontrado);
+                    Session["BemVindo"] = "Olá, " + usuarioLogadoModel.Nome;
 
                     ServicoDeSessao.CriarSessao(usuarioLogadoModel);
                     return RedirectToAction("Listagem", "Pedido");
@@ -50,6 +51,7 @@ namespace LojaNinja.MVC.Controllers
                 else
                 {
                     ModelState.AddModelError("INVALID_USER", "Usuário ou senha inválido.");
+                    return View("Login", loginViewModel);
                 }
             }
 

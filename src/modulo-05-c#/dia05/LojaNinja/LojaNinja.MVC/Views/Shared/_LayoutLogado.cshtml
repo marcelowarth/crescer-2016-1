@@ -21,7 +21,7 @@
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                         <li class="dropdown-header">Pedidos</li>
                         <li><a href="~/Pedido/Listagem">Listagem</a></li>
-                        <li><a href="~/Login/Manter">Cadastrar</a></li>
+                        <li><a href="~/Pedido/Manter">Cadastrar</a></li>
                         <li role="separator" class="divider"></li>
                         <li class="dropdown-header">Usuários</li>
                         <li><a href="~/Login/ListagemUsuarios">Listagem de Usuários</a></li>
@@ -30,11 +30,10 @@
                 </div>
                 <div class="btn-group" role="group">
                     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        Olá, XXXX
+                        @Session["BemVindo"]
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="~/Login/Login">Login</a></li>
                         <li><a href="~/Login/Sair">Logout</a></li>
                     </ul>
                 </div>
