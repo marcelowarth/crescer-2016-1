@@ -10,6 +10,10 @@ namespace LojaNinja.Dominio
 {
     public class Pedido
     {
+        private Pedido()
+        {
+                
+        }
         /// <summary>
         /// Construtor utilizado para montar pedidos novos
         /// </summary>
