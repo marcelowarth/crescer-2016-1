@@ -20,14 +20,14 @@ namespace CdZ.MVC.Controllers
         }
 
         [HttpGet]
-        public JsonResult Get()
+        public JsonResult Get(int paginaIndex = 0)
         {
             /* Para simular erro, descomente
                 var status = (int)HttpStatusCode.InternalServerError;
                 throw new HttpException(status, "Ops");
             */
             //System.Threading.Thread.Sleep(3000);
-            return Json(new { data = _cavaleiros.Todos().FromModel() }, JsonRequestBehavior.AllowGet);
+            return Json(new { data = _cavaleiros.Todos(paginaIndex).FromModel() }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]

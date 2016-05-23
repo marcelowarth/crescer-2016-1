@@ -41,12 +41,12 @@ namespace CdZ.Repositorio.EF
             }
         }
 
-        public IEnumerable<Cavaleiro> Todos()
+        public IEnumerable<Cavaleiro> Todos(int paginaIndex)
         {
             using (var db = new ContextoDeDados())
             {
                 //TODO: paginar
-                return db.Cavaleiro.Include("Imagens").OrderBy(x => x.Nome).ToList();
+                return db.Cavaleiro.Include("Imagens").OrderBy(x => x.Nome).Skip(5 * paginaIndex).Take(5).ToList();
             }
         }
 
