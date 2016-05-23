@@ -13,7 +13,9 @@
         <span class="msg"></span>
     </div>
 </div>
-<form id="frmNovoCavaleiro" method="POST">
+
+@using (Html.BeginForm("Post", "Cavaleiro", FormMethod.Post, new { id = "frmNovoCavaleiro" }))
+{
     <!-- nome -->
     <label for="txtNomeCavaleiro">Nome</label>
     <input id="txtNomeCavaleiro" type="text" name="nome" placeholder="Ex: Shiryu">
@@ -65,9 +67,8 @@
     <button id="btnAdicionarImg" type="button">Adicionar imagem...</button>
     <ul id="novasImagens"></ul>
     <button type="submit" class="btn btn-primary">Cadastrar!</button>
-</form>
+}
 <hr>
-<button id="btnCriar">Criar fake!</button>
 <div id="detalhes-cavaleiro"></div>
 <ul id="cavaleiros"></ul>
 
@@ -78,6 +79,7 @@
 @section scripts {
     <script src="~/Scripts/Models/Cavaleiros.js"></script>
     <script src="~/Scripts/Views/CavaleiroIndexView.js"></script>
+    <script src="~/Scripts/Views/CadastroCavaleiros.js"></script>
     <script>
         new CavaleiroIndexView({
             errorToast: new FeedbackToast({

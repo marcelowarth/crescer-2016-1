@@ -46,7 +46,7 @@ namespace CdZ.Repositorio.EF
             using (var db = new ContextoDeDados())
             {
                 //TODO: paginar
-                return db.Cavaleiro.ToList();
+                return db.Cavaleiro.Include("Imagens").OrderBy(x => x.Nome).ToList();
             }
         }
 
