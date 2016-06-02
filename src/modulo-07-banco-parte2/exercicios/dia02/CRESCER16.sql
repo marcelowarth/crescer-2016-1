@@ -5,7 +5,7 @@ pesquise nome do cliente e cidade (caso tenha), e outras informações referente a
 o Data da primeira compra (pedido) realizado;
 o Data da última compra realizada.
 o Valor total dos pedidos, quantidade de pedidos e média de valor dos pedidos.
-
+*/
 DECLARE
   vNome             CLIENTE.NOME%type;
   vCidade           CIDADE.NOME%type;
@@ -30,7 +30,7 @@ DBMS_OUTPUT.PUT_LINE('Nome Cliente: ' || vNome || ' Cidade: ' || vCidade || ' Pr
                       || ' Total pedidos: ' || vSomaPedidos || ' Media Pedidos: ' || vMediaPedidos);
 
 end;
-*/
+
 -- 2)
 /*Faça um bloco PL/SQL que receba DOIS parâmetros (em tempo de execução apenas): nome e uf, verifique
 se já existe um registro em Cidade para a combinação, caso não exista faça um INSERT na tabela de Cidade.
@@ -55,10 +55,10 @@ and lower(UF) = lower(vUF);
 
 IF(vCount = 0) THEN 
   INSERT INTO CIDADE VALUES (sqcidade.nextval, vCidade, vUF);
+  DBMS_OUTPUT.PUT_LINE('Cadastrado com sucesso!!');
 ELSE 
   DBMS_OUTPUT.PUT_LINE('Já existe uma Cidade com esta UF!!');
 END IF;
 
 END;
 --select * from CIDADE
---Irineopolis
