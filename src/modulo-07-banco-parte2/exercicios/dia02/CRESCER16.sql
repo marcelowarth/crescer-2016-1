@@ -52,15 +52,13 @@ from CIDADE
 where lower(NOME) = lower(vCidade)
 and lower(UF) = lower(vUF);
 
-/*
+
 IF(vCount = 0) THEN 
   INSERT INTO CIDADE VALUES (sqcidade.nextval, vCidade, vUF);
 ELSE 
   DBMS_OUTPUT.PUT_LINE('Já existe uma Cidade com esta UF!!');
 END IF;
 
-EXCEPTION
-*/
-
 END;
-
+--select * from CIDADE
+--Irineopolis
