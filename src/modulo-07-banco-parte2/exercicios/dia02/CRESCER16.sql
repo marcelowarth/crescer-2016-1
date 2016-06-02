@@ -55,6 +55,7 @@ and lower(UF) = lower(vUF);
 
 IF(vCount = 0) THEN 
   INSERT INTO CIDADE VALUES (sqcidade.nextval, vCidade, vUF);
+  COMMIT;
   DBMS_OUTPUT.PUT_LINE('Cadastrado com sucesso!!');
 ELSE 
   DBMS_OUTPUT.PUT_LINE('Já existe uma Cidade com esta UF!!');
