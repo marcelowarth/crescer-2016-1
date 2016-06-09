@@ -45,3 +45,6 @@ bld/
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
 /src/modulo-08-java/exercicios/Aula1/target/
+/src/modulo-08-java/exercicios/Aula2/target/
+/src/modulo-08-java/exercicios/Aula3/target/
+/src/modulo-08-java/exercicios/Aula3/nbproject/
