@@ -6,36 +6,38 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Java Aula 5</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
     </head>
     <body>
         <div class="container">
             <h1>Java Aula 5</h1>
 
-            <form action="pessoa" method="POST">
-                <div class="form-group">
-                    <label>Nome</label>
-                    <input class="form-control" id="txtNome" name="nome" type="text">
+            <form id="formCadastro" action="/pessoa" method="POST">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Nome</span>
+                    <input name="txtNome" id="txtNome" type="text" class="form-control" placeholder="Digite o nome" aria-describedby="basic-addon1">
+                </div><br>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon2">Idade</span>
+                    <input name="txtIdade" id="txtIdade" type="number" class="form-control" placeholder="Digite a idade" aria-describedby="basic-addon2">
                 </div>
-                <div class="form-group">
-                    <label>Idade</label>
-                    <input class="form-control" name="idade" type="number">
-                </div>
-                <div class="form-group">
-                    <label>Sexo</label>
-                    <label class="radio-inline">
-                        <input type="radio" name="optradio">Masculino
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="optradio">Feminino
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="optradio">Outros
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="txtSexo" id="optionsRadios1" value="Masculino" checked>Masculino
                     </label>
                 </div>
-                <button class="btn">Enviar</button>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="txtSexo" id="optionsRadios2" value="Feminino">Feminino
+                    </label>
+                </div>
+                <button class="btn btn-success" type="submit">Enviar</button>
             </form>
+            <br>
+            <ul class="list-group"></ul>
         </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="lista.js"></script>
     </body>
 </html>

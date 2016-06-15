@@ -23,33 +23,20 @@ public class PessoaServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         process(response, request);
-        /*
-        response.setContentType("text/html");
-        try (final PrintWriter out = response.getWriter();) {
-            out.append("<!DOCTYPE html>");
-            out.append("<html>");
-            out.append("<head>");
-            out.append("<title>Java - aula5</title>");
-            out.append("<meta charset=\"UTF-8\">");
-            out.append("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
-            out.append("</head>");
-            out.append("<body>");
-            out.append("<h1>Pessoa</h1>");
-            out.append("</body>");
-            out.append("</html>");
-        }
-*/
     }
     
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         process(response, request);
     }
 
     private void process(HttpServletResponse response, HttpServletRequest request) throws IOException {
         response.setContentType("text/html");
-        try(final PrintWriter out = response.getWriter();) {
-            out.append(request.getParameter("pessoa.nome"));
-        }
+        try (final PrintWriter out = response.getWriter();) {
+            out.append("Nome: " + request.getParameter("nome") 
+                    + " - Idade: " + request.getParameter("idade")
+                    + " - Sexo: " + request.getParameter("sexo")).append("\n");
+}
     }
     
 }
